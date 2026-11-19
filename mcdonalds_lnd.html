@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박세미 | Learning &amp; Development Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --canvas: #ffffff;
+  --parch: #FFF8E1;
+  --ink: #27251F;
+  --muted: #6E6A60;
+  --body: #3d3a33;
+  --accent: #DA291C;
+  --yellow: #FFC72C;
+  --line: rgba(39,37,31,0.12);
+  --nav-bg: rgba(255,255,255,0.9);
+  --front-a: #FFF1C2; --front-b: #FFE48A;
+  --back-a: #FFFBF0; --back-b: #F6EDD0; --back-end: #F6EDD0;
+  --card-bg: #FFF8E1;
+  --res-bg: rgba(218,41,28,0.07);
+  --r: 20px;
+  --sans: 'Noto Sans KR', 'Inter', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: #1c1b18; --parch: #25231e; --ink: #f6f1e6; --muted: #a8a396; --body: #d6d1c4;
+    --accent: #FF5043; --line: rgba(255,255,255,0.13); --nav-bg: rgba(28,27,24,0.9);
+    --front-a: #3a3217; --front-b: #2e2813;
+    --back-a: #2b2924; --back-b: #22201c; --back-end: #22201c;
+    --card-bg: #25231e; --res-bg: rgba(255,80,67,0.12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --canvas: #1c1b18; --parch: #25231e; --ink: #f6f1e6; --muted: #a8a396; --body: #d6d1c4;
+  --accent: #FF5043; --line: rgba(255,255,255,0.13); --nav-bg: rgba(28,27,24,0.9);
+  --front-a: #3a3217; --front-b: #2e2813;
+  --back-a: #2b2924; --back-b: #22201c; --back-end: #22201c;
+  --card-bg: #25231e; --res-bg: rgba(255,80,67,0.12);
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 60px); }
+body { background: var(--canvas); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 99; display: flex; align-items: center; justify-content: space-between;
+  padding: env(safe-area-inset-top, 0px) 7vw 0; height: calc(54px + env(safe-area-inset-top, 0px));
+  background: var(--nav-bg); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+.nav-name { font-family: 'Inter', var(--sans); font-weight: 800; font-size: 0.92rem; letter-spacing: 0.02em; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 0.55rem; }
+.nav-name::before { content: ''; width: 22px; height: 22px; border-radius: 6px; background: var(--accent); box-shadow: inset 0 -7px 0 var(--yellow); }
+.nav-links { display: flex; gap: 1.8rem; }
+.nav-links a { font-family: 'Inter', var(--sans); font-size: 0.78rem; font-weight: 600; color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 9rem 7vw 7vw; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; right: -6vw; top: 12vh; width: 34vw; height: 34vw; max-width: 420px; max-height: 420px; border-radius: 50%; background: var(--yellow); opacity: 0.9; z-index: 0; }
+.hero > * { position: relative; z-index: 1; }
+.h-eye { font-family: 'Inter', var(--sans); font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 1.6rem; }
+.h-title { font-family: 'Inter', var(--sans); font-size: clamp(2.5rem, 7vw, 5.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.035em; }
+.h-title span { color: var(--accent); display: block; }
+.h-sub { margin-top: 2rem; font-size: 1.02rem; font-weight: 400; color: var(--body); line-height: 1.85; max-width: 52ch; word-break: keep-all; }
+.h-stats { display: flex; gap: 3.2rem; margin-top: 3.6rem; padding-top: 2rem; border-top: 2px solid var(--ink); flex-wrap: wrap; }
+.hs-num { font-family: 'Inter', var(--sans); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); line-height: 1; }
+.hs-lbl { font-size: 0.76rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.5; }
+.h-eye, .h-title, .h-sub, .h-stats { animation: fu 0.8s both; }
+.h-title { animation-delay: 0.15s; } .h-sub { animation-delay: 0.3s; } .h-stats { animation-delay: 0.45s; }
+
+/* SHARED */
+.s-eye { font-family: 'Inter', var(--sans); font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 0.9rem; }
+.s-title { font-family: 'Inter', var(--sans); font-size: clamp(1.8rem, 3.4vw, 2.7rem); font-weight: 800; line-height: 1.16; letter-spacing: -0.03em; }
+.s-title small { display: block; margin-top: 0.7rem; font-family: var(--sans); font-size: 0.5em; font-weight: 400; letter-spacing: -0.01em; color: var(--muted); word-break: keep-all; }
+
+/* ABOUT */
+.about { background: var(--parch); padding: 7rem 7vw; border-top: 1px solid var(--line); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3.2rem; align-items: start; }
+.about-belief { font-size: 1.12rem; font-weight: 500; line-height: 1.65; margin-bottom: 1.8rem; word-break: keep-all; }
+.about-facts { list-style: none; }
+.about-facts li { display: flex; gap: 0.85rem; align-items: baseline; padding: 0.8rem 0; border-bottom: 1px solid var(--line); font-size: 0.88rem; color: var(--body); line-height: 1.7; word-break: keep-all; }
+.about-facts li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); flex-shrink: 0; transform: translateY(-1px); }
+.pillar { padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+.pillar:first-child { border-top: 1px solid var(--line); }
+.p-name { font-family: 'Inter', var(--sans); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+.p-desc { font-size: 0.87rem; color: var(--body); line-height: 1.72; word-break: keep-all; }
+
+/* CASES */
+.cases { background: var(--canvas); padding: 7rem 7vw; border-top: 1px solid var(--line); }
+.cases-head { margin-bottom: 3.2rem; }
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.case-card { position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 1 / 1.14; background: var(--card-bg); }
+.card-face { position: absolute; inset: 0; display: flex; flex-direction: column; transition: opacity 0.3s ease; }
+.card-front { padding: 2.1rem 2.1rem 0; background: linear-gradient(170deg, var(--front-a) 0%, var(--front-b) 100%); }
+.case-card.is-open .card-front { opacity: 0; pointer-events: none; }
+.card-tag { font-family: 'Inter', var(--sans); font-size: 0.78rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+.card-title { font-family: 'Inter', var(--sans); font-size: 1.4rem; font-weight: 800; line-height: 1.28; letter-spacing: -0.03em; margin-top: 0.8rem; flex-shrink: 0; }
+.card-title small { display: block; margin-top: 0.5rem; font-family: var(--sans); font-size: 0.74em; font-weight: 400; letter-spacing: -0.01em; color: var(--body); word-break: keep-all; }
+.cv-wrap { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 2.1rem; margin-top: 1.2rem; }
+.cv-chart { flex: 1; display: flex; align-items: flex-end; gap: 8px; min-height: 90px; }
+.g-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+.g-val { font-family: 'Inter', var(--sans); font-size: 0.68rem; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+.g-bar { width: 100%; max-width: 46px; border-radius: 4px 4px 0 0; background: rgba(39,37,31,0.22); }
+.g-yr { font-family: 'Inter', var(--sans); font-size: 0.66rem; color: var(--muted); margin-top: 5px; }
+.g-col.is-peak .g-bar { background: var(--accent); }
+.g-col.is-peak .g-val, .g-col.is-peak .g-yr { color: var(--accent); font-weight: 700; }
+.cv-caption { font-size: 0.7rem; color: var(--muted); margin-top: 0.7rem; line-height: 1.55; }
+.cv-caption em { color: var(--accent); font-style: normal; font-weight: 600; }
+.call-vis { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.7rem; padding: 0 0 2.1rem; margin-top: 1.2rem; }
+.call-old { font-size: 1rem; color: var(--muted); line-height: 1.5; text-decoration: line-through; text-decoration-color: rgba(39,37,31,0.3); word-break: keep-all; }
+.call-arrow { font-size: 1.1rem; color: var(--accent); font-weight: 700; }
+.call-new { font-family: 'Inter', var(--sans); font-size: 2.2rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1.15; }
+.call-note { font-size: 0.72rem; color: var(--muted); line-height: 1.6; word-break: keep-all; }
+
+.card-back { opacity: 0; pointer-events: none; padding: 1.9rem 2rem 5.2rem; overflow-y: auto; overscroll-behavior: contain; background: linear-gradient(165deg, var(--back-a) 0%, var(--back-b) 100%); }
+.case-card.is-open .card-back { opacity: 1; pointer-events: auto; }
+.card-back::-webkit-scrollbar { width: 5px; }
+.card-back::-webkit-scrollbar-thumb { background: rgba(120,115,100,0.4); border-radius: 3px; }
+.cb-title { font-family: 'Inter', var(--sans); font-size: 1.08rem; font-weight: 800; line-height: 1.35; letter-spacing: -0.02em; }
+.cb-open { font-size: 0.86rem; font-weight: 500; line-height: 1.64; margin: 0.8rem 0 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); word-break: keep-all; }
+.cb-acts { list-style: none; }
+.cb-acts li { position: relative; padding: 0.62rem 0 0.62rem 1.3rem; border-bottom: 1px solid var(--line); font-size: 0.8rem; color: var(--body); line-height: 1.7; word-break: keep-all; }
+.cb-acts li:last-child { border-bottom: none; }
+.cb-acts li::before { content: ''; position: absolute; left: 0; top: 1.15rem; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.cb-acts strong { display: block; font-family: 'Inter', var(--sans); font-weight: 700; color: var(--ink); }
+.cb-result { background: var(--res-bg); border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 1.05rem 1.2rem; margin-top: 1.2rem; }
+.cb-nums { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.cn-num { font-family: 'Inter', var(--sans); font-size: 1.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; line-height: 1; }
+.cn-lbl { font-size: 0.66rem; color: var(--body); margin-top: 0.25rem; line-height: 1.45; }
+.cb-rtext { font-size: 0.8rem; color: var(--body); line-height: 1.72; word-break: keep-all; }
+.cb-rtext strong { font-weight: 600; color: var(--ink); }
+
+.btn-tog { position: absolute; left: 2.1rem; bottom: 1.7rem; z-index: 3; width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--ink); background: transparent; cursor: pointer; font-size: 1.1rem; color: var(--ink); display: flex; align-items: center; justify-content: center; font-family: var(--sans); line-height: 1; transition: background 0.2s, color 0.2s; }
+.btn-tog:hover { background: var(--ink); color: var(--canvas); }
+.btn-front { position: static; margin-top: 1.3rem; flex-shrink: 0; }
+.case-card > .btn-tog { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.case-card.is-open > .btn-tog { opacity: 1; pointer-events: auto; }
+.case-card.is-open::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 5.4rem; z-index: 2; background: linear-gradient(to top, var(--back-end) 0%, var(--back-end) 52%, transparent 100%); pointer-events: none; }
+
+.shots { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+.shots:not(:has(figure:not([hidden]))) { display: none; }
+.shots figure[hidden] { display: none; }
+.shots figure { flex: 1 1 calc(50% - 8px); min-width: 130px; margin: 0; border-radius: 10px; overflow: hidden; background: rgba(39,37,31,0.06); }
+.shots img { width: 100%; height: 150px; object-fit: cover; display: block; }
+.shots video { width: 100%; height: 200px; object-fit: contain; background: #000; display: block; }
+.shots figcaption { font-size: 0.66rem; color: var(--muted); padding: 0.35rem 0.5rem; line-height: 1.4; }
+@media (max-width: 840px) { .shots figure { flex-basis: 100%; } .shots img { height: auto; } .shots video { height: auto; max-height: 360px; } }
+
+/* VOICES */
+.voices { background: var(--parch); padding: 4.5rem 7vw; border-top: 1px solid var(--line); }
+.voices-head { margin-bottom: 2.2rem; }
+.voices-title { font-family: 'Inter', var(--sans); font-size: clamp(1.2rem, 2.1vw, 1.6rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.3; }
+.voices-note { font-size: 0.74rem; color: var(--muted); margin-top: 0.5rem; }
+.voice-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+.voice-card { background: var(--canvas); border: 1px solid var(--line); border-top: 4px solid var(--yellow); border-radius: 12px; padding: 1.4rem 1.3rem 1.2rem; }
+.voice-q { font-size: 0.87rem; color: var(--body); line-height: 1.68; word-break: keep-all; }
+.voice-src { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--line); font-family: 'Inter', var(--sans); font-size: 0.72rem; color: var(--accent); font-weight: 700; }
+
+/* RETRO (dark in both themes) */
+.retro { background: #27251F; color: #f6f1e6; padding: 7rem 7vw; border-top: 1px solid #3b382f; }
+.retro .s-eye { color: #FFC72C; }
+.retro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+.retro-p { font-size: 0.95rem; color: #b8b2a3; line-height: 1.95; word-break: keep-all; }
+.retro-p strong { font-weight: 500; color: #FFC72C; }
+.retro-pull { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid #3b382f; }
+.rp-text { font-family: 'Inter', var(--sans); font-size: clamp(1.2rem, 2.4vw, 1.9rem); font-weight: 800; line-height: 1.35; color: #f6f1e6; letter-spacing: -0.02em; }
+.rp-attr { font-size: 0.76rem; color: #8d8777; margin-top: 1.1rem; }
+
+/* CLOSING (yellow in both themes) */
+.closing { background: #FFC72C; color: #27251F; padding: 7rem 7vw; text-align: center; }
+.closing .s-eye { color: #DA291C; }
+.closing .s-title { max-width: 22ch; margin: 1rem auto 0; }
+.closing-p { margin: 2rem auto 0; max-width: 44ch; font-size: 0.98rem; font-weight: 400; line-height: 1.9; word-break: keep-all; }
+.closing-sub { margin: 1rem auto 0; max-width: 44ch; font-size: 0.88rem; color: #4a4638; line-height: 1.85; word-break: keep-all; }
+.btn-primary { display: inline-block; margin-top: 2.2rem; padding: 0.95rem 2.2rem; font-family: 'Inter', var(--sans); font-size: 0.88rem; font-weight: 700; text-decoration: none; border-radius: 100px; background: #DA291C; color: #fff; border: 2px solid #DA291C; transition: background 0.2s, color 0.2s; }
+.btn-primary:hover { background: #27251F; border-color: #27251F; }
+
+footer { padding: 2rem 7vw; display: flex; justify-content: space-between; align-items: center; font-size: 0.74rem; color: var(--muted); background: var(--canvas); border-top: 1px solid var(--line); }
+
+@keyframes fu { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.js [data-rv] { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.js [data-rv].visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js [data-rv] { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1000px) { .voice-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 840px) {
+  .about-grid, .retro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .voice-list { grid-template-columns: 1fr; gap: 0.8rem; }
+  .h-stats { gap: 2rem; }
+  .hero::after { opacity: 0.55; }
+  .card-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+  .case-card { aspect-ratio: auto; }
+  .card-face { position: static; }
+  .card-front { padding-bottom: 0; }
+  .card-front .cv-wrap, .card-front .btn-front, .card-front .call-vis { display: none; }
+  .card-front .card-title { margin-bottom: 1.4rem; }
+  .card-back { opacity: 1; pointer-events: auto; overflow: visible; padding: 1.4rem 1.8rem 2rem; background: transparent; }
+  .card-back .cb-title { display: none; }
+  .case-card > .btn-tog { display: none; }
+}
+@media (max-width: 540px) {
+  nav { padding-left: 5vw; padding-right: 5vw; }
+  .nav-links { gap: 1rem; }
+  .nav-links a:nth-child(3) { display: none; }
+  .hero { padding: 8rem 5vw 10vw; }
+  .about, .cases, .voices, .retro, .closing { padding-left: 5vw; padding-right: 5vw; }
+  footer { padding: 2rem 5vw; flex-direction: column; gap: 0.4rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-name" href="#top">Semi Park</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#cases">Cases</a>
+    <a href="#voices">Voices</a>
+    <a href="#retro">Retrospective</a>
+    <a href="#closing">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <p class="h-eye">Learning &amp; Development Consultant · McDonald’s Korea 지원</p>
+  <h1 class="h-title">Learning that scales<span>with every new store.</span></h1>
+  <p class="h-sub">신입 온보딩, 직무 교육, 리더십 교육을 직접 설계하고 직접 진행해 왔습니다. 3인 교육팀으로 연 약 200명의 신입을 매장 약 40곳에 안착시킨 경험을, 맥도날드의 신규 출점 속도에 연결하고 싶습니다.</p>
+  <div class="h-stats">
+    <div><div class="hs-num">5+ yrs</div><div class="hs-lbl">L&amp;D in retail &amp; hospitality<br>2021.07 ~ 현재</div></div>
+    <div><div class="hs-num">701</div><div class="hs-lbl">신입 직접 교육·평가<br>2022~2026 누적</div></div>
+    <div><div class="hs-num">70%</div><div class="hs-lbl">3개월 내 soft landing<br>신규 입사자 기준</div></div>
+    <div><div class="hs-num">99 → 209</div><div class="hs-lbl">연간 교육 인원<br>(명)</div></div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <p class="s-eye">About</p>
+  <h2 class="s-title">Design it, deliver it,<br>and improve it with the field.</h2>
+  <div class="about-grid" data-rv>
+    <div>
+      <p class="about-belief">교육의 결과는 강의실이 아니라 매장에서 확인합니다. 그래서 설계하고, 직접 가르치고, 현장 데이터로 다시 고칩니다.</p>
+      <ul class="about-facts">
+        <li>Terarosa Education Services Team, Assistant Manager. 바리스타로 입사해 2021.07부터 5년 넘게 교육을 담당</li>
+        <li>연 약 200명의 신입 바리스타 온보딩을 3인 팀으로 설계·운영, 매장 약 40곳에 안착. 2022~2026년 누적 701명을 직접 교육·평가</li>
+        <li>입문 교육 약 40%, Job Training 1 100%, 커핑 초급 약 50%를 직접 강의. 입문 교육부터 리더 교육까지 lifecycle 전체를 설계</li>
+        <li>교육마다 효과와 만족도를 조사해 다음 커리큘럼에 반영</li>
+        <li>Business English. 미국 커피 평가 기관 ACE의 아시아 교육생 센서리 교육에서 조교 겸 간단 통역, 외부 바리스타 챔피언 코치 초청 임직원 교육에서 조교</li>
+        <li>단국대학교 섬유공학 졸업</li>
+      </ul>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="p-name">Design &amp; Develop</div>
+        <div class="p-desc">운영 기준과 현장 데이터에서 출발해 커리큘럼과 교육 자료를 만듭니다. 매뉴얼북, 실습 영상, 모바일 학습 도구까지 직접 제작합니다.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-name">Consult &amp; Partner</div>
+        <div class="p-desc">점장, 현장 리더, 품질, 구매, 영업기획과 함께 역량 격차가 어디에 있는지 찾고, 현장이 따를 수 있는 해결책으로 바꿉니다.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-name">Facilitate &amp; Improve</div>
+        <div class="p-desc">대상에 맞게 직접 진행하고, 교육 이후 지표로 효과를 확인해 다음 차수에 반영합니다.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-name">English in practice</div>
+        <div class="p-desc">미국 커피 평가 기관 ACE의 아시아 교육생 대상 센서리 교육에서 조교 겸 간단 통역을 맡았고, 외부 바리스타 챔피언 코치가 진행한 임직원 교육에서 조교로 참여했습니다. 업무 영어는 business level입니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section class="cases" id="cases">
+  <div class="cases-head">
+    <p class="s-eye">Selected Cases</p>
+    <h2 class="s-title">Diagnose, build,<br>and measure.<small>진단하고, 직접 만들고, 수치로 확인했습니다.</small></h2>
+  </div>
+
+  <div class="card-grid">
+
+    <!-- CASE 01 -->
+    <div class="case-card" id="card-01" data-rv>
+      <div class="card-face card-front">
+        <span class="card-tag">Onboarding Redesign</span>
+        <h3 class="card-title">Landing in 4 months,<br>down from up to a year.<small>독립까지 최대 1년에서 평균 4개월로</small></h3>
+        <button class="btn-tog btn-front" onclick="tog('01')" aria-label="케이스 열기">+</button>
+        <div class="cv-wrap">
+          <div class="cv-chart">
+            <div class="g-col"><span class="g-val">74</span><div class="g-bar" style="height:30%"></div><span class="g-yr">’22</span></div>
+            <div class="g-col"><span class="g-val">75</span><div class="g-bar" style="height:31%"></div><span class="g-yr">’23</span></div>
+            <div class="g-col"><span class="g-val">99</span><div class="g-bar" style="height:41%"></div><span class="g-yr">’24</span></div>
+            <div class="g-col"><span class="g-val">209</span><div class="g-bar" style="height:86%"></div><span class="g-yr">’25</span></div>
+            <div class="g-col is-peak"><span class="g-val">244</span><div class="g-bar" style="height:100%"></div><span class="g-yr">’26</span></div>
+          </div>
+          <p class="cv-caption">연도별 신입 교육 인원 (명) · <em>교육 사이클 월 1회에서 2회로</em></p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <h3 class="cb-title">Landing in 4 months, down from up to a year</h3>
+        <p class="cb-open">신규 매장 확대로 신입이 연 200명 필요해졌습니다. 기존 방식으로는 교육팀이 감당할 수 없는 구조였고, 저는 회의에서 먼저 재설계를 제안했습니다.</p>
+        <ul class="cb-acts">
+          <li><strong>Restructure the sequence</strong>본사 4일, 현장 2개월, 본사 8일, 현장 3~8개월이던 흐름을 본사 3일, 현장 1개월, 본사 3일, 현장 1개월, 본사 2일로 재배치했습니다.</li>
+          <li><strong>Double the cycle</strong>교육 사이클을 월 1회에서 2회로 늘려 연간 교육 인원을 99명에서 209명으로 키웠습니다.</li>
+          <li><strong>Win the field leaders</strong>현장 교육 비중이 커지자 품질 저하를 걱정한 리더들이 커리큘럼을 따르지 않았습니다. 가장 소극적인 리더들과 1:1로 만나 “부족하면 직접 가서 추가 교육”을 약속하고, 날짜 단위로 짜인 커리큘럼은 큰 범위와 순서만 남겼습니다. 지원 출동 1회 후 가장 부정적이던 리더가 협조적으로 바뀌었습니다.</li>
+          <li><strong>Define and measure soft landing</strong>소프트랜딩을 “추가 신입 교육 없이 혼자 1인분을 하는 상태”로 정의하고, 현장 리더가 신입을 모든 메뉴를 단독 제조하는 파트에 투입한 시점을 조사해 판단했습니다. 새 구조를 약 1년 운영한 뒤 확인했고, 신규 입사자의 70%가 3개월 안에 이 상태에 도달했습니다.</li>
+        </ul>
+        <div class="cb-result">
+          <div class="cb-nums">
+            <div><div class="cn-num">1년 → 4개월</div><div class="cn-lbl">독립까지 걸리는 기간<br>최대 → 평균</div></div>
+            <div><div class="cn-num">70%</div><div class="cn-lbl">신규 입사자<br>3개월 내 soft landing</div></div>
+            <div><div class="cn-num">99 → 209</div><div class="cn-lbl">연간 교육 인원<br>(명)</div></div>
+          </div>
+          <p class="cb-rtext">Faster independence without lowering the standard. 빠른 사람은 마지막 교육 2~3주 뒤 독립합니다. <strong>인원이 두 배가 되어도 품질이 흔들리지 않는 구조</strong>가 목표였습니다.</p>
+        </div>
+      </div>
+      <button class="btn-tog" onclick="tog('01')" aria-label="케이스 닫기">×</button>
+    </div>
+
+    <!-- CASE 02 -->
+    <div class="case-card" id="card-02" data-rv>
+      <div class="card-face card-front">
+        <span class="card-tag">Leadership &amp; Capability Gaps</span>
+        <h3 class="card-title">Training that matches<br>how stores are inspected.<small>교육 기준을 점검 기준에 맞췄습니다</small></h3>
+        <button class="btn-tog btn-front" onclick="tog('02')" aria-label="케이스 열기">+</button>
+        <div class="call-vis">
+          <div class="call-old">품질 C등급 이하 매장 약 70%</div>
+          <div class="call-arrow">↓</div>
+          <div class="call-new">약 30%</div>
+          <p class="call-note">다발 감점 항목 중심의 품질·위생 교육으로 변경</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <h3 class="cb-title">Training that matches how stores are inspected</h3>
+        <p class="cb-open">교육 직후에도 QSC 감점이 반복됐습니다. 교육은 커피 맛(주관적) 중심이고 점검은 숫자 기반이라, 기준부터 어긋나 있었습니다.</p>
+        <ul class="cb-acts">
+          <li><strong>A quarterly program for every store leader</strong>매장 확장으로 리더가 늘면서 리더십과 품질관리를 통일할 필요가 생겨, 전 매장 점장·부점장 대상 교육을 분기마다 운영합니다.</li>
+          <li><strong>The right expert for each topic</strong>리더십은 자격을 갖춘 외부 강사에게, 품질은 점검 담당자(QC)에게 맡겼습니다. QC가 다발 감점 항목 중심으로 품질·위생을 직접 교육하도록 바꿨습니다.</li>
+          <li><strong>Ask, then add</strong>점장들에게 타 부서와 소통할 때 가장 어려운 점을 물었고, 매출분석 용어와 숫자가 어렵다는 답에 따라 관련 부서와 P&amp;L 교육을 추가했습니다. 사무실에서 면접자가 쓰러져 직원이 CPR을 한 일을 계기로 소방서 CPR 교육도 넣었습니다.</li>
+        </ul>
+        <div class="cb-result">
+          <div class="cb-nums">
+            <div><div class="cn-num">70 → 30%</div><div class="cn-lbl">품질 C등급 이하<br>매장 비율(약)</div></div>
+          </div>
+          <p class="cb-rtext">Align the training standard with the inspection standard. <strong>교육 내용을 늘린 것이 아니라, 교육과 점검의 기준을 맞춘 것</strong>이 핵심이었습니다.</p>
+          <div class="shots"><figure class="media" data-img="leader" hidden><img alt="점장과 부점장 분기 교육 현장"><figcaption>점장·부점장 분기 교육</figcaption></figure></div>
+        </div>
+      </div>
+      <button class="btn-tog" onclick="tog('02')" aria-label="케이스 닫기">×</button>
+    </div>
+
+    <!-- CASE 03 -->
+    <div class="case-card" id="card-03" data-rv>
+      <div class="card-face card-front">
+        <span class="card-tag">Learning Design &amp; Tools</span>
+        <h3 class="card-title">More practice,<br>on every phone.<small>이론은 줄이고 실습과 도구를 늘렸습니다</small></h3>
+        <button class="btn-tog btn-front" onclick="tog('03')" aria-label="케이스 열기">+</button>
+        <div class="cv-wrap">
+          <div class="cb-nums" style="margin-top:auto;">
+            <div><div class="cn-num">4시간 → 30분</div><div class="cn-lbl">평가표 작성<br>(검증 포함)</div></div>
+            <div><div class="cn-num">100%</div><div class="cn-lbl">Job Training 1<br>직접 진행</div></div>
+          </div>
+          <p class="cv-caption">한 명씩 코칭하고, <em>기록이 근거가 되는 평가</em>로 바꿨습니다</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <h3 class="cb-title">More practice, on every phone</h3>
+        <p class="cb-open">직무 교육 후 점장 조사에서 두 가지가 나왔습니다. 실습 테스트의 긴장 때문에 실력을 못 보여준다는 것, 현장에는 연습할 시간과 봐줄 사람이 부족하다는 것입니다.</p>
+        <ul class="cb-acts">
+          <li><strong>Cut theory, extend practice</strong>기초 이론을 줄이고 실습과 연습 시간을 늘렸습니다. 경력 편차가 커서 실습에서는 한 명씩 맞춤 코칭합니다. 실습 테스트는 없애고, 교육 후에도 볼 수 있는 실습 영상을 제작해 배포했습니다.</li>
+          <li><strong>Make the record the evidence</strong>교육이 끝날 때마다 기억에 의존해 평가표를 쓰느라 시간이 많이 들었고, 제가 쓴 총평이 객관적이지 않다는 지적도 받았습니다. 그래서 교육생이 실습 중 받은 피드백을 메뉴와 항목별로 폰에서 직접 기록하게 하고, 저는 기록을 모아 총평을 쓰고 검증합니다. 이후 같은 지적은 다시 나오지 않았습니다.</li>
+          <li><strong>Built for the phone</strong>현장직에게는 회사 PC가 없어 개인 휴대폰으로 접속하는 온보딩 웹앱을 만들었습니다. 종이로 걷어 채점하던 필기시험과 설문을 온라인 자동 채점과 데이터화로 바꿔 결과 정리가 익일에서 교육 종료 당일로 빨라졌고, 만족도 응답 중 온보딩 시스템 언급률이 20%에서 40%로 늘었습니다.</li>
+          <li><strong>Keep theory days alive</strong>인원이 많아 실습을 못 하는 기수에서는 골든벨식 버저 웹앱으로 50문제 퀴즈쇼를 진행했고, 25명 중 20명이 점수를 얻었습니다.</li>
+          <li><strong>Enable colleagues</strong>제작 과정을 ‘AI로 코딩하기’ 매뉴얼로 정리해 배포했고, 동료가 웹 대시보드를 만들고 연차 높은 팀장이 웹앱을 완성했습니다.</li>
+        </ul>
+        <div class="cb-result">
+          <div class="cb-nums">
+            <div><div class="cn-num">4시간 → 30분</div><div class="cn-lbl">평가표 작성<br>(검증 포함)</div></div>
+            <div><div class="cn-num">익일 → 당일</div><div class="cn-lbl">시험·설문<br>결과 정리</div></div>
+            <div><div class="cn-num">10편</div><div class="cn-lbl">베이커리 직무 교육<br>영상 (진행 중)</div></div>
+          </div>
+          <p class="cb-rtext">Learners practice more, and the results flow into data automatically. <strong>평가의 모든 문장이 기록에서 나오고</strong>, 배운 내용은 현장에서 다시 보고 연습할 수 있습니다.</p>
+          <div class="shots"><figure class="media" data-video="practice-video|jobvideo" hidden><video controls muted playsinline preload="metadata"></video><figcaption>직무 교육 실습 영상</figcaption></figure><figure class="media" data-video="onboarding-app" hidden><video controls muted playsinline preload="metadata"></video><figcaption>온보딩 웹앱 화면</figcaption></figure><figure class="media" data-img="feedbacknote-student" hidden><img alt="실습 기록노트 교육생 화면"><figcaption>실습 기록노트: 교육생 화면</figcaption></figure><figure class="media" data-img="feedbacknote-teacher" hidden><img alt="실습 기록노트 강사 화면"><figcaption>실습 기록노트: 강사 화면</figcaption></figure><figure class="media" data-img="webapp" hidden><img alt="온보딩 웹앱 화면"><figcaption>온보딩 웹앱</figcaption></figure><figure class="media" data-img="quizshow" hidden><img alt="퀴즈쇼 버저 웹앱 화면"><figcaption>퀴즈쇼 버저 웹앱</figcaption></figure></div>
+        </div>
+      </div>
+      <button class="btn-tog" onclick="tog('03')" aria-label="케이스 닫기">×</button>
+    </div>
+
+    <!-- CASE 04 -->
+    <div class="case-card" id="card-04" data-rv>
+      <div class="card-face card-front">
+        <span class="card-tag">Field Partnership &amp; Change</span>
+        <h3 class="card-title">Fewer repeat complaints,<br>one shared honorific.<small>현장에 닿아야 풀리는 문제를 맡았습니다</small></h3>
+        <button class="btn-tog btn-front" onclick="tog('04')" aria-label="케이스 열기">+</button>
+        <div class="call-vis">
+          <div class="call-old">반복 불만 월 3~4건</div>
+          <div class="call-arrow">↓</div>
+          <div class="call-new">9개월간 2건</div>
+          <p class="call-note">상품 누락 불만 · 2026년 1~9월</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <h3 class="cb-title">Fewer repeat complaints, one shared honorific</h3>
+        <p class="cb-open">교육팀은 본사와 현장 사이의 창구입니다. 고객 불만과 호칭 문화처럼, 현장에 닿아야 풀리는 문제를 맡아 왔습니다.</p>
+        <ul class="cb-acts">
+          <li><strong>Trace the complaint</strong>반복되던 상품 누락 불만이 신입이 많은 매장에 몰려 있었고, 건별로 추적하니 응대자가 신입이었습니다. 이 항목을 온보딩에서 강조했습니다.</li>
+          <li><strong>Lead a norm, not a notice</strong>선후배 호칭 ‘님’ 단일화는 회사가 공지했지만 정착을 맡은 사람이 없었습니다. 교육 담당자인 제가 먼저 ‘세미님’으로 소개하고, 친한 현장 리더들과 1:1로 만나 리더 모임에서 서로 ‘님’으로 부르는 모습을 보여 주자고 제안했습니다. 신입은 처음부터 새 호칭을 썼습니다.</li>
+          <li><strong>Partner across functions</strong>생산팀이 블렌딩 상세를 공개하지 않자 구매팀에 요청해 로스팅 일자별 생두 구성을 받아 전사 커핑에서 설명했습니다. 매주 20~30명, 임원진 전원이 참석합니다.</li>
+        </ul>
+        <div class="cb-result">
+          <div class="cb-nums">
+            <div><div class="cn-num">3~4 → 2건</div><div class="cn-lbl">상품 누락 불만<br>월 건수 → 9개월 합계</div></div>
+            <div><div class="cn-num">4년</div><div class="cn-lbl">호칭 ‘님’<br>전 현장 정착</div></div>
+          </div>
+          <p class="cb-rtext">Culture follows when someone shows it first. 교육에 돌아온 신입 동기들이 서로 <strong>‘OO님’으로 부르는 모습</strong>에서 정착을 확인했습니다.</p>
+          <div class="shots"><figure class="media" data-img="friday-cupping" hidden><img alt="금요일 전사 커핑"><figcaption>금요일 전사 커핑</figcaption></figure></div>
+        </div>
+      </div>
+      <button class="btn-tog" onclick="tog('04')" aria-label="케이스 닫기">×</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voices" id="voices">
+  <div class="voices-head">
+    <h2 class="voices-title">Numbers start the diagnosis.<br>People’s words complete it.</h2>
+    <p class="voices-note">제가 운영한 교육 후 설문과 현장 피드백 중에서 · Survey responses and field feedback</p>
+  </div>
+  <div class="voice-list" data-rv>
+    <div class="voice-card">
+      <p class="voice-q">여러 분야를 어떻게 하면 저희가 잘 이해할지 고민하신 흔적이 보여, 일원이 된 게 뿌듯했습니다.</p>
+      <p class="voice-src">Instructional design · 온보딩 서베이</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-q">자기 리더십이 오래된 방식이라는 걸 깨달았다.</p>
+      <p class="voice-src">Leadership program · 교육 후기</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-q">처음 접하는 회사의 이미지가, 교육과 경험으로 더욱 좋아졌습니다.</p>
+      <p class="voice-src">First impression · 온보딩 서베이</p>
+    </div>
+    <div class="voice-card">
+      <p class="voice-q">신입이 빨리 자리 잡으니, 가르치는 사람과 배우는 사람이 아니라 함께 가는 동료가 됐어요.</p>
+      <p class="voice-src">Field leader · 현장 피드백</p>
+    </div>
+  </div>
+</section>
+
+<!-- RETROSPECTIVE -->
+<section class="retro" id="retro">
+  <p class="s-eye">Retrospective</p>
+  <h2 class="s-title">혼자 만든 도구가<br>팀의 일이 되기까지</h2>
+  <div class="retro-grid">
+    <p class="retro-p">
+      온보딩 웹앱을 혼자 만들어 팀에 공유했을 때, “기획 단계부터 공유했어야 한다”는 반발이 있었습니다.
+      웹앱 제작과 유지보수에 돈과 시간이 많이 든다는 우려도 있었는데, 실제 비용은 0원이라
+      <strong>말로 설명하는 것만으로는 설득이 되지 않았습니다.</strong>
+    </p>
+    <p class="retro-p">
+      그래서 결과물을 설명하는 대신 만드는 방법을 알려 주기로 했습니다. 제작 과정을 ‘AI로 코딩하기’ 매뉴얼로 정리해 배포하자,
+      동료가 웹 대시보드를 만들고, 연차 높은 팀장이 매뉴얼을 따라 웹앱을 완성했습니다.
+      <strong>도구의 가치는 만든 사람 한 명이 아니라 함께 만들 수 있는 사람의 수에 달려 있다</strong>는 걸 배웠습니다.
+    </p>
+  </div>
+  <div class="retro-pull">
+    <p class="rp-text">Share the how, not just the what.</p>
+    <p class="rp-attr">Retrospective · AI onboarding web app</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing" id="closing">
+  <p class="s-eye">Contact</p>
+  <h2 class="s-title">From one opening<br>to the next hundred.</h2>
+  <p class="closing-p">신규 매장이 늘어도 교육이 같은 속도로 따라가도록 만들어 온 경험을, 올해 100개 이상의 신규 출점을 계획한 맥도날드에서 이어가고 싶습니다.</p>
+  <p class="closing-sub">Thank you for reading. 면접에서 더 자세히 이야기 나누고 싶습니다.</p>
+  <a href="mailto:bobsemi@me.com" class="btn-primary">Email me · 이메일 보내기</a>
+</section>
+
+<footer>
+  <span>Semi Park · Learning &amp; Development Consultant</span>
+  <span>© 2026</span>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  var rv = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('[data-rv]').forEach(function (el) { rv.observe(el); });
+  var bases = ['', 'media/', 'images/', '../coupang/', '../toss/media/'];
+  var imgExts = ['png','jpg','jpeg','webp','PNG','JPG','JPEG'];
+  var vidExts = ['mp4','mov','webm','MP4','MOV'];
+  function seek(fig, el, names, exts, evt) {
+    var list = [];
+    names.forEach(function (n) { bases.forEach(function (b) { exts.forEach(function (e) { list.push(b + n + '.' + e); }); }); });
+    var i = 0;
+    function next() { if (i >= list.length) return; el.src = list[i++]; }
+    el.addEventListener(evt, function () { fig.hidden = false; });
+    el.addEventListener('error', next);
+    next();
+  }
+  Array.prototype.slice.call(document.querySelectorAll('figure.media[data-img]')).forEach(function (f) {
+    seek(f, f.querySelector('img'), f.getAttribute('data-img').split('|'), imgExts, 'load');
+  });
+  Array.prototype.slice.call(document.querySelectorAll('figure.media[data-video]')).forEach(function (f) {
+    seek(f, f.querySelector('video'), f.getAttribute('data-video').split('|'), vidExts, 'loadeddata');
+  });
+  function tog(n) { document.getElementById('card-' + n).classList.toggle('is-open'); }
+</script>
+</body>
+</html>
