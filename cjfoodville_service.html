@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박세미 | CJ푸드빌 서비스 교육·품질관리 담당자 포트폴리오</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --brand:#D9381E;
+  --brand-soft:#FCEBE7;
+  --ink:#16171B;
+  --sub:#5C5F68;
+  --line:#E4E5EA;
+  --bg:#FFFFFF;
+  --panel:#F7F7F9;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--brand:#FF8B73;--brand-soft:#4A1F18;--ink:#EDEEF2;--sub:#A3A6AF;--line:#2C2E35;--bg:#121317;--panel:#1A1B20;color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+p{margin:0}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.bar b{font-weight:700;letter-spacing:-0.01em}
+.bar nav{display:flex;gap:18px;font-size:14px;color:var(--sub);overflow-x:auto;white-space:nowrap}
+.bar nav a{text-decoration:none}
+.bar nav a:hover,.bar nav a:focus-visible{color:var(--brand)}
+
+/* hero */
+.hero{padding:88px 0 56px}
+.hero .for{font-size:15px;font-weight:600;color:var(--brand);margin-bottom:20px}
+.hero h1{font-size:clamp(34px,5.6vw,60px);line-height:1.22;letter-spacing:-0.035em;font-weight:800;margin:0 0 28px;max-width:16ch}
+.hero .lead{font-size:18px;color:var(--sub);max-width:42em}
+.ctx{margin-top:48px;display:grid;grid-template-columns:repeat(2,minmax(0,280px));border-top:2px solid var(--ink)}
+.ctx div{padding:18px 18px 4px 0}
+.ctx dt{font-size:13px;color:var(--sub)}
+.ctx dd{margin:4px 0 0;font-size:22px;font-weight:700;letter-spacing:-0.02em}
+.ctx-note{font-size:14px;color:var(--sub);margin-top:14px}
+
+/* area */
+.area{padding:72px 0;border-top:1px solid var(--line)}
+.area-head{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-bottom:8px}
+.area-head h2{font-size:28px;letter-spacing:-0.02em;margin:0;line-height:1.3}
+.area-head h2 small{display:block;font-size:14px;font-weight:600;color:var(--brand);letter-spacing:0;margin-bottom:6px}
+.area-head .jd{color:var(--sub);font-size:15px;padding-top:30px}
+
+.case{display:grid;grid-template-columns:280px 1fr;gap:40px;padding:40px 0 0}
+.case + .case{margin-top:24px;border-top:1px dashed var(--line)}
+.case aside .metric{font-size:30px;font-weight:800;color:var(--brand);letter-spacing:-0.03em;line-height:1.2}
+.case aside .metric-t{font-size:14px;color:var(--sub);margin-top:6px}
+.extra{margin-top:28px;padding:16px 20px;background:var(--panel);border-radius:10px;font-size:15px;color:var(--sub)}
+.case aside .metric-t:first-child{font-size:16px;font-weight:700;color:var(--brand)}
+.study{margin-top:40px;max-width:720px}
+.study h3{font-size:19px;margin:0 0 8px;letter-spacing:-0.01em}
+.study p{color:var(--sub)}
+.case h3{font-size:21px;letter-spacing:-0.02em;line-height:1.45;margin:0 0 18px}
+.steps{display:grid;grid-template-columns:76px 1fr;row-gap:14px;column-gap:12px}
+.steps dt{font-size:14px;font-weight:700;color:var(--brand);padding-top:2px}
+.steps dd{margin:0;color:var(--ink)}
+figure{margin:24px 0 0}
+figure video{width:100%;border-radius:10px;display:block;background:var(--panel)}
+figure img{width:100%;max-width:100%;border-radius:10px;display:block;background:var(--panel)}
+figcaption{font-size:13px;color:var(--sub);margin-top:8px}
+
+/* how */
+.how{padding:72px 0;border-top:1px solid var(--line)}
+.how figure{margin-top:28px}
+.how h2{font-size:28px;letter-spacing:-0.02em;margin:0 0 28px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.how-grid div{background:var(--panel);border-radius:12px;padding:24px}
+.how-grid h3{font-size:17px;margin:0 0 8px;letter-spacing:-0.01em}
+.how-grid p{font-size:15px;color:var(--sub)}
+.how-grid.two{grid-template-columns:repeat(2,1fr)}
+
+/* closing */
+.end{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:96px 0 112px;background:#111216;color:#fff}
+.end .wrap{position:relative;z-index:1;width:100%}
+.mosaic{position:absolute;inset:0;pointer-events:none}
+.mosaic i{position:absolute;display:block;background:#D9381E;clip-path:polygon(50% 0,100% 50%,100% 100%,50% 50%,0 100%,0 50%);opacity:0;transform:translateY(40%);transition:opacity .4s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.mosaic i.on{opacity:1;transform:none}
+.end{transition:background-color .6s ease}
+.end.full{background:#D9381E}
+.end h2{font-size:clamp(26px,3.8vw,40px);letter-spacing:-0.025em;line-height:1.36;margin:0 0 24px;max-width:24ch;color:#fff}
+.end p{color:rgba(255,255,255,.86);max-width:44em}
+.js .rise{opacity:0;transform:translateY(56px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rise.up{opacity:1;transform:none}
+.contact{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 28px;font-weight:600}
+.contact a{text-decoration:none;border-bottom:1.5px solid rgba(255,255,255,.7);color:#fff}
+
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+
+@media (max-width:820px){
+  .area-head,.case{grid-template-columns:1fr;gap:12px}
+  .area-head .jd{padding-top:0}
+  .ctx{grid-template-columns:1fr 1fr}
+  .how-grid,.how-grid.two{grid-template-columns:1fr}
+  .bar nav{display:none}
+  .hero{padding:56px 0 40px}
+  .area,.how{padding:56px 0}
+  .how .area-head{margin-bottom:0}
+  .steps{grid-template-columns:1fr;row-gap:4px}
+  .steps dd{margin-bottom:12px}
+}
+
+/* ---- 그래프와 애니메이션 ---- */
+:root{--seg:#F4C7BD}
+@media (prefers-color-scheme:dark){:root{--seg:#6E2C21}}
+.viz,.result{margin:22px 0 4px;padding:20px 22px;background:var(--panel);border-radius:16px}
+.result{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0;background:none}
+.result>div{background:var(--panel);border-radius:16px;padding:18px 20px}
+.result span{display:block;font-size:13px;font-weight:600;color:var(--sub)}
+.result b{display:block;font-size:26px;color:var(--brand);letter-spacing:-0.02em;line-height:1.3;margin-top:4px}
+.result b s{color:var(--sub);font-size:16px;font-weight:500;margin-right:4px}
+.result small{display:block;font-size:13px;color:var(--sub)}
+.viz .row{display:grid;grid-template-columns:3.4em 1fr auto;gap:12px;align-items:center;margin:0 0 12px;font-size:13px;font-weight:600;color:var(--sub)}
+.viz .row.wide{grid-template-columns:3.4em 1fr}
+.viz .row b{font-size:14px;color:var(--ink);white-space:nowrap}
+.viz .row b.on{color:var(--brand)}
+.vcap{font-size:12.5px;color:var(--sub);margin-top:4px!important}
+.hbar{height:16px;border-radius:5px;background:var(--bg);overflow:hidden;display:flex}
+.hbar i{display:block;height:100%;background:var(--sub);opacity:.55}
+.hbar i.on{background:var(--brand);opacity:1}
+.hbar i.on2{background:var(--brand);opacity:.35}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots i{width:11px;height:11px;border-radius:50%;background:var(--sub);opacity:.55}
+.dots i.lt{opacity:.25}
+.dots i.on{background:var(--brand);opacity:1}
+.dots.big{display:grid;grid-template-columns:repeat(25,1fr);gap:6px}
+.dots.big i{width:auto;height:auto;aspect-ratio:1}
+.sq{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:260px}
+.sq i{aspect-ratio:1;border-radius:4px;background:var(--bg)}
+.sq i.bad{background:var(--sub);opacity:.7}
+.sq.after i.bad{background:var(--brand);opacity:1}
+.chain{list-style:none;margin:0;padding:0}
+.chain li{position:relative;padding:8px 0 8px 24px;font-size:15px;line-height:1.55}
+.chain li::before{content:"";position:absolute;left:3px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.chain li::after{content:"";position:absolute;left:7px;top:29px;bottom:-8px;width:1px;background:var(--line)}
+.chain li:last-child::after{display:none}
+.chain li b{display:block;font-size:13px;color:var(--brand)}
+.names{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bub{background:var(--bg);border-radius:16px 16px 16px 4px;padding:10px 16px;font-weight:700;color:var(--sub);font-size:17px}
+.bub.now{background:var(--brand);color:#fff;border-radius:16px 16px 4px 16px}
+.names em{font-style:normal;font-size:13px;color:var(--sub)}
+.yr{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:end;height:200px}
+.yr div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:13px;color:var(--sub);font-weight:600}
+.yr b{font-size:15px;margin-bottom:6px;color:var(--ink)}
+.yr i{display:block;width:100%;max-width:56px;border-radius:8px 8px 3px 3px;background:var(--sub);opacity:.5;margin-bottom:8px}
+.yr .on i{background:var(--brand);opacity:1}
+.yr .on b{color:var(--brand)}
+.tl-row{display:grid;grid-template-columns:2.4em 1fr;align-items:center;gap:10px;margin:0 0 18px}
+.tl-row>span{font-size:13px;font-weight:600;color:var(--sub)}
+.tl-bar{position:relative;display:flex;height:24px;background:var(--bg);border-radius:6px}
+.seg{height:100%;flex:none}
+.seg.hq{background:var(--ink);min-width:5px;border-radius:2px}
+.seg.fd{background:var(--seg)}
+.seg.range,.hatch{background:repeating-linear-gradient(-45deg,var(--seg) 0 5px,var(--panel) 5px 10px)}
+.flag{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--brand)}
+.flag b{position:absolute;left:8px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;color:var(--brand);font-weight:700}
+.flag.flag-r b{left:auto;right:8px}
+.tl-scale{position:relative;height:1.2em;font-size:11px;color:var(--sub);margin:-8px 0 12px calc(2.4em + 10px)}
+.tl-scale span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.tl-scale span:first-child{transform:none}
+.tl-scale span:last-child{transform:translateX(-100%)}
+.tl-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--sub)}
+.tl-legend i{display:inline-block;width:12px;height:10px;margin-right:6px;vertical-align:-1px;border-radius:2px}
+
+/* 스크롤에 따라: 닿기 전엔 바닥에, 닿으면 제자리, 지나가면 천장으로 */
+.js .anim .pop{transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s ease;transition-delay:calc(var(--i,0) * 45ms)}
+.js .anim.below .pop{transform:translateY(48px);opacity:0}
+.js .anim.above .pop{transform:translateY(-48px);opacity:0}
+.js .anim .grow-y{transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .6s;transition-delay:calc(var(--i,0) * 90ms)}
+.js .anim.below .grow-y{transform:scaleY(0)}
+.js .anim.above .grow-y{transform:translateY(-60px) scaleY(.2);opacity:0}
+.js .anim .grow-x{transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .6s;transition-delay:calc(var(--i,0) * 90ms)}
+.js .anim.below .grow-x{transform:translateY(24px) scaleX(0)}
+.js .anim.above .grow-x{transform:translateY(-24px) scaleX(0);opacity:0}
+
+/* 제목 글자 나타나기 */
+.rv .w{display:inline-block;white-space:nowrap}
+.rv .ch{display:inline-block;opacity:0;filter:blur(6px);transform:translateY(.12em);transition:opacity .45s ease,filter .45s ease,transform .45s ease;transition-delay:calc(var(--i) * 26ms);white-space:pre}
+.rv.in .ch{opacity:1;filter:none;transform:none}
+
+@media (max-width:820px){
+  .result{grid-template-columns:1fr}
+  .dots.big{gap:4px}
+  .yr{height:170px;gap:8px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .mosaic i{opacity:1;transform:none;transition:none}
+  .end{background:#D9381E}
+  .js .anim .pop,.js .anim .grow-y,.js .anim .grow-x{transition:none!important;transform:none!important;opacity:revert!important}
+  .rv .ch{opacity:1;filter:none;transform:none;transition:none}
+}
+</style>
+</head><body>
+
+<header class="bar">
+  <div class="wrap">
+    <b>박세미</b>
+    <nav aria-label="섹션">
+      <a href="#standard">서비스 기준</a>
+      <a href="#touch">고객 접점</a>
+      <a href="#class">집합 교육</a>
+      <a href="#store">매장 개선</a>
+      <a href="#spread">정착과 협업</a>
+      <a href="#contact">연락처</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="for">CJ푸드빌 외식브랜드 서비스 교육/품질관리 담당자 지원</p>
+    <h1>매장의 서비스가 사람마다 달라지지 않게, 기준을 세우고 몸에 익게 합니다.</h1>
+    <p class="lead">테라로사에서 신입 바리스타로 시작해 8년 동안 매장 현장에 있었고, 교육서비스팀에서 신입과 전 매장 리더의 서비스·직무·리더 교육을 직접 설계하고 강의해 왔습니다. 매뉴얼로 기준을 세우고, 실습으로 익히게 하고, 고객 의견과 점검 결과로 다시 고칩니다.</p>
+    <dl class="ctx">
+      <div><dt>직접 교육·평가한 구성원</dt><dd>749명</dd></div>
+      <div><dt>매장 현장 경력</dt><dd>2018년부터 8년</dd></div>
+    </dl>
+    <p class="ctx-note">2022년부터 2026년 11월까지 직접 교육하고 평가한 인원입니다. 아래 사례는 공고의 주요 업무 순서로 정리했습니다.</p>
+  </div>
+</section>
+
+<section class="area" id="standard">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>① 주요 업무</small>서비스 기준과 매장 실무형 매뉴얼</h2>
+      <p class="jd">브랜드별 서비스 기준을 세우고, 매장에서 바로 쓰는 실무형 서비스 매뉴얼을 작성</p>
+    </div>
+
+    <article class="case">
+      <aside>
+        <div class="metric">298쪽 · 154쪽</div>
+        <div class="metric-t">브랜드 매뉴얼북, 점장 매뉴얼북 V2를 직접 기획하고 제작</div>
+      </aside>
+      <div>
+        <h3>부서마다 다르게 전달되던 기준을, 매장에서 펼쳐 보는 책으로 모았습니다</h3>
+        <dl class="steps">
+          <dt>과제</dt><dd>브랜드 가치와 점포 운영 기준이 부서마다 다른 말로 전달되고 있었습니다.</dd>
+          <dt>실행</dt><dd>약 1년 동안 브랜드 매뉴얼북을 혼자 기획하고 써서 298쪽에 담았습니다. 점장이 매장 운영에 쓰는 점장 매뉴얼북 V2(154쪽)도 직접 기획하고 제작했고, 사내 결재와 인쇄 업체 협의, 배포까지 맡았습니다.</dd>
+          <dt>형식</dt><dd>바쁜 매장에서도 필요한 부분을 바로 찾을 수 있도록 소제목을 반복하고 내용은 두세 줄로 짧게 쓰는 설명서 방식으로 구성했습니다. 기준이 바뀔 때 팀이 함께 고칠 수 있도록 PowerPoint로 완성했습니다.</dd>
+          <dt>배포</dt><dd>인쇄 제본해 전 매장 점장과 DM에게 배포했습니다.</dd>
+        </dl>
+        <figure class="media" data-img="manual" hidden>
+          <img alt="298쪽 브랜드 매뉴얼북 실물">
+          <figcaption>298쪽 브랜드 매뉴얼북 실물입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="area" id="touch">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>② 주요 업무</small>고객 접점 가이드와 상황별 응대 스크립트</h2>
+      <p class="jd">직원 행동과 상황별 응대 스크립트를 담은 고객 접점 가이드 설계</p>
+    </div>
+
+    <article class="case">
+      <aside>
+        <div class="metric">고객 접점 신입 전원</div>
+        <div class="metric-t">온보딩 기본 서비스·MOT 세션 직접 진행</div>
+      </aside>
+      <div>
+        <h3>스크립트를 외우게 하는 데서 멈추지 않고, 스스로 짜 보게 했습니다</h3>
+        <dl class="steps">
+          <dt>대상</dt><dd>고객 접점에 서는 모든 신입이 온보딩에서 기본 서비스 교육과 MOT 교육을 받습니다.</dd>
+          <dt>실행</dt><dd>2인 1조로 손님과 직원 역할을 번갈아 맡아 반복합니다. 처음에는 제가 짠 응대 스크립트로 연습하고, 다음 단계에서는 상황만 주고 각자 스크립트를 직접 짜서 다시 연습합니다.</dd>
+          <dt>설계</dt><dd>주어진 스크립트에서 스스로 짜는 스크립트로 넘어가도록 단계를 나눠, 스크립트에 없는 상황에서도 응대를 만들어 낼 수 있게 했습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="MOT 실습 흐름. 제공 스크립트로 연습, 역할을 바꿔 반복, 상황만 제시, 각자 스크립트를 짜서 다시 연습.">
+          <ol class="chain" aria-hidden="true">
+            <li class="pop" style="--i:0"><b>따라 하기</b>제가 짠 응대 스크립트로 연습</li>
+            <li class="pop" style="--i:1"><b>바꿔 하기</b>2인 1조로 손님과 직원 역할을 바꿔 반복</li>
+            <li class="pop" style="--i:2"><b>상황 받기</b>스크립트 없이 상황만 제시</li>
+            <li class="pop" style="--i:3"><b>직접 짜기</b>각자 스크립트를 쓰고 다시 연습</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside>
+        <div class="metric-t">설명하는 것까지 서비스</div>
+      </aside>
+      <div>
+        <h3>손님에게 커피를 설명하는 말까지 응대로 연습시켰습니다</h3>
+        <dl class="steps">
+          <dt>배경</dt><dd>테라로사는 커피가 잘 자라는 붉은 토양이라는 뜻으로, 산지 중심의 커피를 하는 회사입니다. 메뉴를 정확히 내는 것만큼, 그 커피가 어떤 커피인지 손님에게 전하는 것도 서비스라고 봤습니다.</dd>
+          <dt>실행</dt><dd>포스 응대 실습에서 싱글오리진 커피마다 손님에게 설명하듯 답하게 합니다. 다음 교육에서는 회사 이름의 뜻을 다시 묻고, 온보딩을 마칠 때는 스페셜티 커피 회사의 바리스타로서 어떤 자세를 가질지 직접 적게 합니다.</dd>
+          <dt>변화</dt><dd>매장 미스터리 쇼퍼 결과지에 원두를 아주 전문적으로 설명했다는 평가가 나옵니다.</dd>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="area" id="class">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>③ 주요 업무</small>서비스·불만 응대·감각 교육, 대규모 집합 교육</h2>
+      <p class="jd">고객 서비스, 와인 지식, 불만 응대, 서비스 마인드 집합 교육 기획·진행 / 대규모 교육 경험</p>
+    </div>
+
+    <article class="case">
+      <aside>
+        <div class="metric">최대 1년 → 평균 4개월</div>
+        <div class="metric-t">신입의 현장 랜딩 기간. 연간 교육 인원 99명 → 209명</div>
+      </aside>
+      <div>
+        <h3>매장 1.5배 확장에 맞춰 온보딩 구조를 다시 설계했습니다</h3>
+        <dl class="steps">
+          <dt>과제</dt><dd>매장을 30곳에서 45곳으로 늘리려면 한 해 200명의 신입이 필요했지만, 본사 4일, 현장 3~4개월, 본사 8일, 현장 3~8개월이던 기존 구조로는 현장 랜딩까지 최대 1년이 걸렸습니다. 교육팀 업무가 두 배가 되는 안을 회의에서 먼저 제안했습니다.</dd>
+          <dt>실행</dt><dd>본사 3일, 현장 1개월, 본사 3일, 현장 1개월, 본사 2일 구조로 바꾸고 교육 사이클을 월 1회에서 2회로 늘렸습니다. 직무 교육은 이론을 줄이고 실습을 늘렸으며, 긴장 때문에 실력을 보여 주지 못하던 실습 테스트는 없애고 실습 중 받은 피드백 기록으로 평가하게 바꿨습니다.</dd>
+          <dt>변화</dt><dd>신규 입사자 70%가 3개월 안에 현장 리더 평가 기준의 소프트랜딩에 도달했습니다. 2026년은 11월까지 292명을 교육했습니다.</dd>
+        </dl>
+        <div class="viz anim tl" aria-label="온보딩 구조 전후. 전에는 본사 4일, 현장 3~4개월, 본사 8일, 현장 3~8개월로 길면 1년. 후에는 본사 3일, 현장 1개월, 본사 3일, 현장 1개월, 본사 2일이고 평균 4개월에 랜딩.">
+          <div class="tl-row" aria-hidden="true"><span>전</span>
+            <div class="tl-bar">
+              <i class="seg hq grow-x" style="width:1.1%;--i:0"></i><i class="seg fd grow-x" style="width:25%;--i:1"></i><i class="seg range grow-x" style="width:8.3%;--i:2"></i><i class="seg hq grow-x" style="width:2.2%;--i:3"></i><i class="seg fd grow-x" style="width:25%;--i:4"></i><i class="seg range grow-x" style="width:38.4%;--i:5"></i>
+              <span class="flag flag-r pop" style="left:99.5%;--i:7"><b>길면 1년</b></span>
+            </div>
+          </div>
+          <div class="tl-row" aria-hidden="true"><span>후</span>
+            <div class="tl-bar">
+              <i class="seg hq grow-x" style="width:.8%;--i:2"></i><i class="seg fd grow-x" style="width:8.3%;--i:3"></i><i class="seg hq grow-x" style="width:.8%;--i:4"></i><i class="seg fd grow-x" style="width:8.3%;--i:5"></i><i class="seg hq grow-x" style="width:.6%;--i:6"></i>
+              <span class="flag pop" style="left:33.3%;--i:8"><b>평균 4개월에 랜딩</b></span>
+            </div>
+          </div>
+          <div class="tl-scale" aria-hidden="true"><span style="left:0%">0</span><span style="left:25%">3개월</span><span style="left:50%">6개월</span><span style="left:75%">9개월</span><span style="left:100%">12개월</span></div>
+          <div class="tl-legend" aria-hidden="true"><span><i style="background:var(--ink)"></i>본사 교육</span><span><i style="background:var(--seg)"></i>현장</span><span><i class="hatch"></i>사람마다 달랐던 기간</span></div>
+        </div>
+        <div class="viz anim" aria-label="연도별 직접 교육한 신입. 2022년 74명, 2023년 75명, 2024년 99명, 2025년 209명, 2026년 11월까지 292명.">
+          <div class="yr"><div class="" aria-hidden="true"><b class="pop" style="--i:2">74</b><i class="grow-y" style="height:25%;--i:0"></i>2022</div><div class="" aria-hidden="true"><b class="pop" style="--i:3">75</b><i class="grow-y" style="height:26%;--i:1"></i>2023</div><div class="" aria-hidden="true"><b class="pop" style="--i:4">99</b><i class="grow-y" style="height:34%;--i:2"></i>2024</div><div class="on" aria-hidden="true"><b class="pop" style="--i:5">209</b><i class="grow-y" style="height:72%;--i:3"></i>2025</div><div class="on" aria-hidden="true"><b class="pop" style="--i:6">292</b><i class="grow-y" style="height:100%;--i:4"></i>2026</div></div>
+          <p class="vcap">직접 교육한 신입 인원이에요. 2026년은 11월까지예요. 진한 막대가 교육 사이클을 월 2회로 늘린 뒤예요.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside>
+        <div class="metric">약 70% → 약 30%</div>
+        <div class="metric-t">품질 점검(QSC) C등급 이하 매장 비율</div>
+      </aside>
+      <div>
+        <h3>점장·부점장 교육을 현장의 점검 기준에 맞췄습니다</h3>
+        <dl class="steps">
+          <dt>대상</dt><dd>전 매장 점장과 부점장을 대상으로 분기마다 리더 교육을 운영합니다. 불만 고객 응대 세션은 제가 직접 진행합니다.</dd>
+          <dt>이슈</dt><dd>품질 교육 직후에도 QSC 점검에서 같은 항목의 감점이 반복됐습니다. 교육은 커피 맛처럼 주관적인 내용 위주였는데, 점검은 숫자로 하는 것이라 기준부터 어긋나 있었습니다.</dd>
+          <dt>개선</dt><dd>각 분야 전문가가 가르친다는 원칙으로 리더십은 외부 강사에게 맡기고, 품질 교육은 QSC 점검 담당자가 다발 감점 항목 중심으로 진행하도록 바꿨습니다. 점장이 매출과 비용까지 책임지게 되자 관련 부서와 P&amp;L 교육을 열었고, 소방서 CPR 교육도 더했습니다.</dd>
+          <dt>변화</dt><dd>품질 C등급 이하 매장 비율이 약 70%에서 약 30%로 줄었습니다. 교육 후에는 "내 리더십이 오래된 방식이라는 걸 깨달았다"는 후기를 받았습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="품질 C등급 이하 매장 비율. 전 약 70%, 후 약 30%.">
+          <div class="row" aria-hidden="true"><span>전</span><div class="sq"><i class="pop bad" style="--i:0"></i><i class="pop bad" style="--i:1"></i><i class="pop bad" style="--i:2"></i><i class="pop bad" style="--i:3"></i><i class="pop bad" style="--i:4"></i><i class="pop bad" style="--i:5"></i><i class="pop bad" style="--i:6"></i><i class="pop" style="--i:7"></i><i class="pop" style="--i:8"></i><i class="pop" style="--i:9"></i></div><b>약 70%</b></div>
+          <div class="row" aria-hidden="true"><span>후</span><div class="sq after"><i class="pop bad" style="--i:10"></i><i class="pop bad" style="--i:11"></i><i class="pop bad" style="--i:12"></i><i class="pop" style="--i:13"></i><i class="pop" style="--i:14"></i><i class="pop" style="--i:15"></i><i class="pop" style="--i:16"></i><i class="pop" style="--i:17"></i><i class="pop" style="--i:18"></i><i class="pop" style="--i:19"></i></div><b class="on">약 30%</b></div>
+          <p class="vcap">칸 하나가 매장의 10%, 색칠된 칸이 품질 C등급 이하 매장이에요.</p>
+        </div>
+        <figure class="media" data-img="leader" hidden>
+          <img alt="점장과 부점장 교육 현장. 강사가 화면 앞에서 설명하고 참석자들이 앉아서 듣고 있다">
+          <figcaption>점장과 부점장 분기 교육 현장입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside>
+        <div class="metric">매주 20~30명</div>
+        <div class="metric-t">전사 커핑 운영. 커핑 초급 과정 절반 직접 강의</div>
+      </aside>
+      <div>
+        <h3>향과 맛을 구분하고 손님의 언어로 설명하는 감각 교육을 해 왔습니다</h3>
+        <dl class="steps">
+          <dt>사내</dt><dd>입사 1년 차 커핑 초급 과정의 절반을 직접 강의합니다. 매주 금요일 전사 커핑은 임원진을 포함해 20~30명이 자발적으로 참여하는 자리로 재설계했고, 구매팀에 요청해 받은 로스팅 일자별 생두 구성으로 설명합니다.</dd>
+          <dt>사외</dt><dd>미국 커피 평가 기관 ACE의 아시아 교육생 대상 센서리 교육에 조교 겸 통역으로 참여했습니다. 협력업체 VIP 고객 대상 커피 클래스와 더 하우스 오브 테라로사 서울 프리 오픈 행사의 핸드드립 클래스(인플루언서·매거진 관계자 대상)는 강사로 진행했습니다.</dd>
+          <dt>확장</dt><dd>감각을 단계별로 훈련하고 그것을 손님에게 전하는 말로 옮기는 방식은 와인 교육에도 그대로 이어집니다.</dd>
+        </dl>
+        <figure class="media" data-img="cupping" hidden>
+          <img alt="금요일 커핑 세션. 화면에 로스팅 일자별 블렌딩 구성이 띄워져 있고, 구성원들이 서서 커핑하고 있다">
+          <figcaption>로스팅 일자별 블렌딩 구성을 띄워 두고 함께 커핑하는 금요일 세션입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="area" id="store">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>④ 주요 업무</small>매장 진단·코칭과 고객 의견 기반 개선</h2>
+      <p class="jd">매장 방문으로 서비스 수준을 진단하고 점장·직원을 코칭, 리포트와 피드백 / 고객 의견 분석 기반 개선 활동</p>
+    </div>
+
+    <article class="case">
+      <aside>
+        <div class="metric">월 3~4건 → 9개월 2건</div>
+        <div class="metric-t">반복되던 상품 누락 불만</div>
+      </aside>
+      <div>
+        <h3>반복되는 불만을 건별로 따라가 원인을 찾고, 교육으로 막았습니다</h3>
+        <dl class="steps">
+          <dt>이슈</dt><dd>고객 VOC에서 상품 누락 불만이 매달 3~4건씩 반복됐습니다.</dd>
+          <dt>분석</dt><dd>건별로 추적하니 신입이 많은 매장에 몰려 있었고, 응대한 직원도 신입이었습니다.</dd>
+          <dt>개선</dt><dd>자주 들어오는 VOC 항목을 온보딩에서 다시 강조하는 내용으로 넣었습니다.</dd>
+          <dt>변화</dt><dd>2026년 1~9월 9개월 동안 같은 불만은 2건이었습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="9개월 기준 상품 누락 불만. 월 3~4건이면 9개월에 27~36건, 이후 9개월간 2건.">
+          <div class="row wide" aria-hidden="true"><span>전</span><div class="dots"><i class="pop" style="--i:0"></i><i class="pop" style="--i:1"></i><i class="pop" style="--i:2"></i><i class="pop" style="--i:3"></i><i class="pop" style="--i:4"></i><i class="pop" style="--i:5"></i><i class="pop" style="--i:6"></i><i class="pop" style="--i:7"></i><i class="pop" style="--i:8"></i><i class="pop" style="--i:9"></i><i class="pop" style="--i:10"></i><i class="pop" style="--i:11"></i><i class="pop" style="--i:12"></i><i class="pop" style="--i:13"></i><i class="pop" style="--i:14"></i><i class="pop" style="--i:15"></i><i class="pop" style="--i:16"></i><i class="pop" style="--i:17"></i><i class="pop" style="--i:18"></i><i class="pop" style="--i:19"></i><i class="pop" style="--i:20"></i><i class="pop" style="--i:21"></i><i class="pop" style="--i:22"></i><i class="pop" style="--i:23"></i><i class="pop" style="--i:24"></i><i class="pop" style="--i:25"></i><i class="pop" style="--i:26"></i><i class="pop lt" style="--i:27"></i><i class="pop lt" style="--i:28"></i><i class="pop lt" style="--i:29"></i><i class="pop lt" style="--i:30"></i><i class="pop lt" style="--i:31"></i><i class="pop lt" style="--i:32"></i><i class="pop lt" style="--i:33"></i><i class="pop lt" style="--i:34"></i><i class="pop lt" style="--i:35"></i></div></div>
+          <div class="row wide" aria-hidden="true"><span>후</span><div class="dots"><i class="pop on" style="--i:2"></i><i class="pop on" style="--i:3"></i></div></div>
+          <p class="vcap">점 하나가 상품 누락 불만 한 건이에요. 이전은 월 3~4건을 9개월로 환산했고, 이후는 2026년 1~9월 실제 건수예요.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside>
+        <div class="metric">4시간 → 30분</div>
+        <div class="metric-t">기수마다 평가표를 쓰는 데 걸린 시간</div>
+      </aside>
+      <div>
+        <h3>매장 리더를 직접 찾아가 설득하고, 코칭을 기록으로 남겼습니다</h3>
+        <dl class="steps">
+          <dt>현장</dt><dd>온보딩 개편으로 현장 교육 비중이 커지자, 품질이 떨어질까 걱정한 현장 리더들이 새 커리큘럼을 따르지 않았습니다. 가장 협조하지 않던 리더부터 1:1로 만나 부족하면 직접 가서 추가 교육하겠다고 약속했고, 날짜 단위로 촘촘했던 커리큘럼은 큰 범위와 순서만 남겼습니다. 약속대로 매장에 한 번 출동한 뒤, 가장 부정적이던 리더가 본사에 협조적으로 바뀌었습니다.</dd>
+          <dt>조사</dt><dd>점장 교육에서 직무 교육의 효과를 물으니, 현장에는 신입이 연습할 시간과 봐 줄 사람이 부족하다는 답이 나왔습니다.</dd>
+          <dt>도구</dt><dd>교육생이 실습 중 받은 피드백을 직접 기록하고 고쳐지면 스스로 체크하는 실습 피드백 웹앱을 만들었습니다. 기록은 엑셀 교육 결과표로 자동 변환되어 교육생, 점장, 슈퍼바이저에게 전달됩니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="평가표 작성 시간 전 4시간, 후 검증까지 30분.">
+          <div class="row" aria-hidden="true"><span>전</span><div class="hbar"><i class="grow-x" style="width:100%"></i></div><b>4시간</b></div>
+          <div class="row" aria-hidden="true"><span>후</span><div class="hbar"><i class="grow-x on" style="width:12.5%;--i:3"></i></div><b class="on">30분</b></div>
+          <p class="vcap">기수마다 평가표를 쓰는 데 걸린 시간이에요.</p>
+        </div>
+        <figure class="media" data-img="feedbacknote-student" hidden>
+          <img alt="교육생 화면 네 장. 기수 코드와 이름으로 입장, 출석 체크와 메뉴별 피드백 기록, 연습 중과 교정됨으로 나뉜 모아보기, 베스트 사진과 만족도를 내는 마무리">
+          <figcaption>교육생 화면입니다. 실습 중 받은 피드백을 메뉴와 항목별로 직접 남기고, 고쳐지면 스스로 ‘교정됨’을 체크합니다.</figcaption>
+        </figure>
+        <figure class="media" data-img="feedbacknote-teacher" hidden>
+          <img alt="강사 화면. 기수별 입장 인원, 기록된 피드백 수, 사진과 만족도 제출 현황, 교육생별 출석과 피드백 표, 총평 자료 전체 복사 버튼">
+          <figcaption>강사 화면입니다. 출석, 피드백, 사진, 만족도가 기수별로 한곳에 모입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="area" id="spread">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>⑤ 주요 업무</small>서비스 기준의 현장 정착과 유관 부서 협업</h2>
+      <p class="jd">서비스 기준을 매장에 정착시키고, 유관 부서와 협업해 교육 콘텐츠 제작</p>
+    </div>
+
+    <article class="case">
+      <aside>
+        <div class="metric">4년, 전 현장</div>
+        <div class="metric-t">공지만 있던 '님' 호칭의 정착</div>
+      </aside>
+      <div>
+        <h3>공지만으로 바뀌지 않던 기준을, 현장에서 먼저 보여 주며 정착시켰습니다</h3>
+        <dl class="steps">
+          <dt>이슈</dt><dd>업무에 필요한 의견이나 질문이 있어도 쉽게 꺼내지 못하는 분위기가 있었습니다. 본부장님과 논의한 끝에 선후배로 부르는 도제식 관계와 경직된 호칭이 원인이라고 보고, 인사팀이 호칭 변경을 공지했지만 현장은 바뀌지 않았습니다.</dd>
+          <dt>실행</dt><dd>신입에게 가장 '높아 보이는' 교육 담당자인 제가 먼저 '세미님'으로 소개했습니다. 친한 현장 리더들과 1:1로 만나 리더 모임에서 서로를 님으로 부르는 모습을 먼저 보여 주자고 제안했고, 신입은 입사 첫날부터 새 호칭을 쓰게 했습니다.</dd>
+          <dt>변화</dt><dd>리더 사이의 경쟁심이 있는 매장부터 번져 4년에 걸쳐 전 현장에 정착했습니다. 교육에 다시 모인 신입 동기들이 서로를 'OO님'으로 부르는 대화에서 정착을 확인했습니다.</dd>
+        </dl>
+        <div class="viz anim names" aria-label="호칭 변화. 선배님에서 세미님으로, 4년.">
+          <span class="bub pop" style="--i:0" aria-hidden="true"><s>선배님</s></span>
+          <em class="pop" style="--i:1" aria-hidden="true">4년</em>
+          <span class="bub now pop" style="--i:2" aria-hidden="true">세미님</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside>
+        <div class="metric">29편</div>
+        <div class="metric-t">교육 영상, 2025~2026년 (베이커리팀 의뢰 10편 포함)</div>
+      </aside>
+      <div>
+        <h3>유관 부서와 함께, 매장에서 다시 볼 수 있는 교육 콘텐츠를 만듭니다</h3>
+        <dl class="steps">
+          <dt>협업</dt><dd>품질 교육은 QSC 점검 담당자와, 커피 교육은 사내 커피연구소와, P&amp;L 교육은 관련 부서와 함께 만들었습니다. 베이커리팀의 의뢰를 받아 베이커리 직무 교육 영상 10편도 제작했습니다.</dd>
+          <dt>제작</dt><dd>영상 경험 없이 Premiere Pro를 독학해 실습 영상과 2026년 전사 시무식 영상을 기획, 촬영, 편집했고, 팀이 콘텐츠를 만드는 과정을 표준화했습니다.</dd>
+          <dt>채널</dt><dd>현장 직원은 회사 PC가 없어서, 교육 도구와 사내소식지를 휴대폰으로 여는 웹 페이지로 만들고 실습 영상은 교육이 끝난 뒤에도 다시 볼 수 있게 배포했습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="교육 영상 2025년 12편, 2026년 17편(베이커리팀 의뢰 10편 포함).">
+          <div class="row" aria-hidden="true"><span>2025</span><div class="hbar"><i class="grow-x" style="width:70.6%"></i></div><b>12편</b></div>
+          <div class="row" aria-hidden="true"><span>2026</span><div class="hbar"><i class="grow-x on" style="width:41.2%;--i:2"></i><i class="grow-x on2" style="width:58.8%;--i:4"></i></div><b class="on">17편</b></div>
+          <p class="vcap">2026년 막대의 옅은 부분이 베이커리팀 의뢰로 만든 10편이에요.</p>
+        </div>
+        <figure class="media" data-video="jobvideo" hidden>
+          <video muted loop playsinline autoplay preload="metadata" aria-label="직무 교육 실습 영상의 한 장면"></video>
+          <figcaption>기획, 촬영, 편집까지 직접 만든 실습 영상의 한 장면입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="case">
+      <aside>
+        <div class="metric">구축 완료</div>
+        <div class="metric-t">통합 교육 웹앱, 2027년 도입 예정</div>
+      </aside>
+      <div>
+        <h3>입사부터 직무 교육까지, 구성원 한 명의 교육 이력을 한곳에 모읍니다</h3>
+        <dl class="steps">
+          <dt>기반</dt><dd>현장에서 이미 쓰고 있는 온보딩 웹앱, 실습 피드백 웹앱, 점장용 교육 신청 웹앱을 AI로 직접 만들었습니다. 개인 휴대폰으로 접속하고 비용은 0원입니다. 종이로 걷어 채점하던 필기시험은 자동 채점으로, 교육 서베이는 응답이 바로 데이터로 쌓이게 바꿨습니다.</dd>
+          <dt>통합</dt><dd>세 도구를 하나의 사이트로 합쳤습니다. 온보딩과 실습 노트를 탭으로 나누고, 사람마다 한 번 정한 PIN으로 모든 기수의 교육에 들어옵니다. 점장이 신청한 교육 일정은 교육생 화면에 반영되고, 교육 현황은 자동으로 집계됩니다.</dd>
+          <dt>방향</dt><dd>매장과 브랜드가 늘어나도 구성원별 교육 이력과 피드백을 한 화면에서 보고, 매장 코칭에 바로 쓸 수 있게 하는 것이 목표입니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="운영 중인 세 도구가 하나의 통합 교육 웹앱으로 합쳐지는 흐름">
+          <ol class="chain" aria-hidden="true">
+            <li class="pop" style="--i:0"><b>운영 중</b>온보딩 웹앱: 과정 진행, 필기시험 자동 채점, 서베이</li>
+            <li class="pop" style="--i:1"><b>운영 중</b>실습 피드백 웹앱: 피드백 기록, 결과표 자동 변환</li>
+            <li class="pop" style="--i:2"><b>운영 중</b>점장용 교육 신청 웹앱: 교육 신청과 일정</li>
+            <li class="pop" style="--i:3"><b>2027년 도입</b>통합 교육 웹앱: 개인별 PIN 하나로 입사부터 직무 교육까지</li>
+          </ol>
+        </div>
+        <figure class="media" data-img="webapp" hidden>
+          <img alt="현장 직원이 휴대폰으로 접속하는 온보딩 웹앱 화면">
+          <figcaption>이름을 넣으면 화면 곳곳에서 불러 주고, 과정을 마칠 때마다 진행률이 차오릅니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="how" id="mind">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>일하는 방식</small>현장에서 출발하고, 직접 실행합니다</h2>
+      <p class="jd">외식 서비스에 대한 이해, 다양한 교육 대상과의 소통</p>
+    </div>
+    <div class="how-grid two" style="margin-top:28px">
+      <div>
+        <h3>현장의 언어로 가르칩니다</h3>
+        <p>바리스타로 매장에 서며 신입을 가르치는 매장 코치를 맡았고, 외무부 장관 공관 커피 케이터링에도 참여했습니다. 가장 바쁜 시간의 매장이 어떻게 돌아가는지 알기에, 교육도 그 시간에 쓸 수 있는 것부터 담습니다.</p>
+      </div>
+      <div>
+        <h3>듣고 싶게 만듭니다</h3>
+        <p>약 5년 동안 교육하며, 내가 하고 싶은 말보다 듣는 사람이 듣고 싶게 만드는 것이 중요하다는 걸 배웠습니다. 그래서 유머를 아끼지 않고, 참여하고 싶어지는 장치를 먼저 설계합니다.</p>
+      </div>
+      <div>
+        <h3>약속은 직접 가서 지킵니다</h3>
+        <p>설득이 필요할 때는 가장 반대하는 리더부터 1:1로 만났고, 부족하면 직접 가겠다는 약속은 실제 출동으로 지켰습니다. 영상이 필요하면 편집을 독학했고, 도구가 없으면 AI로 만들었습니다.</p>
+      </div>
+      <div>
+        <h3>대상에 맞춰 바꿉니다</h3>
+        <p>무경력 신입부터 점장, 임원, 외부 고객까지 가르쳐 왔습니다. 해외 매장 오픈을 준비하던 프랑스 구성원에게는 3개월 동안 주 3회 영어로 직무 교육을 했습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end" id="contact">
+  <div class="mosaic" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="rise" style="--r:0">손님이 매장에서 듣는 마지막 한마디까지, 교육이 닿게 하고 싶습니다.</h2>
+    <p class="rise" style="--r:1">커피가 좋아 신입 바리스타로 시작했고, 손발이 맞는 동료들과 러시타임을 쳐내며 서비스는 한 사람의 친절이 아니라 팀이 같은 기준으로 움직일 때 완성된다는 걸 배웠습니다. 그 뒤 교육서비스팀에서 그 기준을 만들고, 신입과 리더에게 전하고, 고객의 목소리로 다시 고치는 일을 해 왔습니다.</p>
+    <p class="rise" style="--r:2;margin-top:14px">CJ푸드빌은 빕스와 제일제면소처럼 성격이 다른 브랜드를 많은 매장에서 운영합니다. 브랜드마다 다른 서비스를 모든 매장이 같은 수준으로 지켜 내도록 기준을 세우고, 앞으로 맡게 될 와인 교육까지, 테라로사에서 해 온 방식을 더 큰 무대에서 넓히고 싶습니다.</p>
+    <div class="contact rise" style="--r:3">
+      <a href="mailto:bobsemi@me.com">bobsemi@me.com</a>
+      <a href="tel:01031021691">010-3102-1691</a>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+(function(){
+  /* 사진과 영상: index.html과 같은 폴더, media 폴더, 토스 포트폴리오의 media 폴더 순서로 찾고, 있을 때만 보여줍니다 */
+  var bases = ['', 'media/', '../toss/media/'];
+  var imgExts = ['png','jpg','jpeg','webp','PNG','JPG','JPEG'];
+  var vidExts = ['mp4','mov','webm','MP4','MOV'];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function seek(fig, el, name, exts, evt){
+    var list = [];
+    bases.forEach(function(b){ exts.forEach(function(e){ list.push(b + name + '.' + e); }); });
+    var i = 0;
+    function next(){ if (i < list.length) el.src = list[i++]; }
+    el.addEventListener(evt, function(){ fig.hidden = false; });
+    el.addEventListener('error', next);
+    next();
+  }
+  document.querySelectorAll('figure.media[data-img]').forEach(function(fig){
+    seek(fig, fig.querySelector('img'), fig.getAttribute('data-img'), imgExts, 'load');
+  });
+  document.querySelectorAll('figure.media[data-video]').forEach(function(fig){
+    var v = fig.querySelector('video');
+    if (reduce){ v.removeAttribute('autoplay'); v.controls = true; }
+    seek(fig, v, fig.getAttribute('data-video'), vidExts, 'loadeddata');
+  });
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 그래프: 화면 아래에 있으면 바닥, 화면 안이면 제자리, 위로 지나가면 천장 */
+  var vis = document.querySelectorAll('.anim');
+  function place(el, inView){
+    el.classList.remove('below','above','in');
+    if (inView) { el.classList.add('in'); return; }
+    var r = el.getBoundingClientRect();
+    el.classList.add(r.top > window.innerHeight / 2 ? 'below' : 'above');
+  }
+  if (reduce || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(vis, function(el){ el.classList.add('in'); });
+  } else {
+    Array.prototype.forEach.call(vis, function(el){ place(el, false); });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ place(e.target, e.isIntersecting); });
+    }, {rootMargin:'-12% 0px -12% 0px', threshold:0});
+    Array.prototype.forEach.call(vis, function(el){ io.observe(el); });
+  }
+
+  /* 제목이 화면에 들어오면 한 글자씩 나타나요 */
+  var heads = document.querySelectorAll('h1, .area-head h2');
+  Array.prototype.forEach.call(heads, function(h){
+    h.setAttribute('aria-label', h.textContent);
+    var n = 0;
+    Array.prototype.slice.call(h.childNodes).forEach(function(node){
+      if (node.nodeType !== 3) { if (node.setAttribute) node.setAttribute('aria-hidden','true'); return; }
+      var frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(function(part){
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+        var w = document.createElement('span');
+        w.className = 'w'; w.setAttribute('aria-hidden','true');
+        Array.prototype.forEach.call(part, function(ch){
+          var sp = document.createElement('span');
+          sp.className = 'ch'; sp.style.setProperty('--i', n++); sp.textContent = ch; w.appendChild(sp);
+        });
+        frag.appendChild(w);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    h.classList.add('rv');
+  });
+  if (reduce || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(heads, function(h){ h.classList.add('in'); });
+  } else {
+    var hio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); hio.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -12% 0px'});
+    Array.prototype.forEach.call(heads, function(h){ hio.observe(h); });
+  }
+
+  /* 마무리: 까만 배경에 파란 모자이크가 아래부터 차오르고, 글자가 아래에서 올라와요 */
+  (function(){
+    var end = document.getElementById('contact');
+    var box = end.querySelector('.mosaic');
+    var rises = end.querySelectorAll('.rise');
+    var tiles = [], last = -1;
+    function build(){
+      var w = end.offsetWidth, h = end.offsetHeight;
+      var W = w < 600 ? 36 : 56, step = W / 2;
+      var cols = Math.ceil(w / W), rows = Math.ceil(h / step) + 2;
+      box.innerHTML = ''; tiles = [];
+      for (var r = 0; r < rows; r++){
+        for (var c = 0; c < cols; c++){
+          var t = document.createElement('i');
+          t.style.width = W + 'px'; t.style.height = W + 'px';
+          t.style.left = (c * W) + 'px'; t.style.top = (r * step - step) + 'px';
+          var fromBottom = (rows - 1 - r) / Math.max(rows - 1, 1);
+          t._at = fromBottom * 0.8 + Math.random() * 0.14;
+          box.appendChild(t); tiles.push(t);
+        }
+      }
+      last = -1; update();
+    }
+    function progress(){
+      var vh = window.innerHeight;
+      var top = end.getBoundingClientRect().top;
+      return Math.max(0, Math.min(1, (vh - top) / (vh * 0.85)));
+    }
+    function update(){
+      var pr = reduce ? 1 : progress();
+      var key = Math.round(pr * 200);
+      if (key === last) return; last = key;
+      for (var i = 0; i < tiles.length; i++){
+        var on = pr >= tiles[i]._at;
+        if (on !== tiles[i]._on){ tiles[i]._on = on; tiles[i].classList.toggle('on', on); }
+      }
+      end.classList.toggle('full', pr >= 0.97);
+      Array.prototype.forEach.call(rises, function(el){
+        var at = 0.62 + (+el.style.getPropertyValue('--r') || 0) * 0.08;
+        el.classList.toggle('up', pr >= at);
+      });
+    }
+    var tick = false;
+    window.addEventListener('scroll', function(){ if (tick) return; tick = true; requestAnimationFrame(function(){ tick = false; update(); }); }, {passive:true});
+    var rt;
+    window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 150); });
+    build();
+  })();
+})();
+</script>
+</body>
+</html>
