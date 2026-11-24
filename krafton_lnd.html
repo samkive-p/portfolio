@@ -204,8 +204,25 @@
   .vcap{font-size:.75rem;color:var(--g500);margin:6px 0 0!important}
 
   /* 끝 */
-  .end{padding:72px 0 120px}
+  .end{padding:0;margin-top:56px;border-top:1px solid var(--g200)}
+  .end-tag{max-width:696px;margin:0 auto;padding:28px 28px 0;display:flex;align-items:center;gap:14px}
+  .end-tag span{flex:none;font-size:.875rem;font-weight:700;color:var(--red);background:var(--red-soft);border-radius:999px;padding:6px 14px}
+  .end-tag i{flex:1;height:1px;background:var(--g200)}
+  .end-in{padding:72px 0 120px}
   .end h2{font-weight:700;font-size:2.25rem;line-height:1.36;margin:0 0 32px;color:var(--g900);letter-spacing:-.03em}
+  html.fx .end{height:230vh;height:230svh}
+  html.fx .end-in{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;padding:0;overflow:hidden}
+  html.fx .end-tag{position:absolute;top:calc(env(safe-area-inset-top,0px) + 76px);left:0;right:0;width:100%;padding-top:0;z-index:2}
+  html.fx .end-body{max-width:696px;margin:0 auto;padding:0 28px;width:100%;will-change:filter}
+  .end-body .w{display:inline-block;white-space:nowrap;will-change:transform,opacity}
+  .end-body .bye{margin-top:36px!important}
+  /* 스크롤에 따라 나타나는 그래프와 문장 */
+  html.fx .rvl{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 70ms)}
+  html.fx .rvl.go{opacity:1;transform:none}
+  html.fx .grx{transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
+  html.fx .gry{transform:scaleY(0);transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
+  html.fx .grx.go,html.fx .gry.go{transform:none}
+  .yr i.plan.gry{transform-origin:bottom}
   .end p{margin:0 0 1em}
   .bye{margin-top:48px!important;font-weight:600;color:var(--g900)}
   .contact{margin-top:14px;font-size:1.05rem}
@@ -220,7 +237,7 @@
     .stage h2,.end h2{font-size:1.65rem}
     .case{padding:22px 18px 18px}
   }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.rv .ch{opacity:1;filter:none;transform:none}}
+  @media (prefers-reduced-motion:reduce){html.fx .rvl,html.fx .grx,html.fx .gry{opacity:1!important;transform:none!important}html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.rv .ch{opacity:1;filter:none;transform:none}}
 </style>
 </head>
 <body>
@@ -511,7 +528,7 @@
           QR 하나, 실습 영상
         </div>
       </div>
-      <p class="cap">직무 교육이 끝난 뒤에도 현장에서 다시 보며 참고할 수 있도록, 여러 장의 사진과 표로 된 실습 매뉴얼을 실습 영상으로 만들었습니다. 2025년 12편, 2026년 17편(베이커리팀 의뢰 10편 포함)을 기획, 촬영, 편집까지 직접 했습니다.</p>
+      <p class="cap">직무 교육이 끝난 뒤에도 현장에서 다시 보며 참고할 수 있도록, 여러 장의 사진과 표로 된 실습 매뉴얼을 실습 영상으로 만들었습니다. 기획, 촬영, 편집까지 직접 했습니다.</p>
       <figure class="media" hidden>
         <video src="media/jobvideo.mp4" muted loop playsinline autoplay preload="metadata" aria-label="실습 영상의 한 장면"></video>
         <figcaption>기획, 촬영, 편집까지 직접 만든 실습 영상의 한 장면입니다.</figcaption>
@@ -565,7 +582,7 @@
       </div>
 
       <h3>휴대폰으로 참여하는 온보딩 웹앱</h3>
-      <p>"테라로사 교육이 좋다고 해서 왔다"는 신입이 많아, 그 기대를 넘는 경험을 주고 싶었습니다. 현장직은 회사 PC가 없어 개인 휴대폰으로 참여하도록 설계했습니다. 제작과 운영 비용은 0원입니다.</p>
+      <p>"테라로사 교육이 좋다고 해서 왔다"는 신입이 많아, 그 기대를 넘는 경험을 주고 싶었습니다. 현장직은 회사 PC가 없어 개인 휴대폰으로 참여하도록 설계했습니다.</p>
       <figure class="media" hidden>
         <img src="media/webapp.png" alt="휴대폰으로 참여하는 온보딩 웹앱의 주요 화면들">
         <figcaption>이름을 넣으면 화면 곳곳에서 불러 주고, 과정을 마칠 때마다 진행률이 차오릅니다. 마지막엔 필기시험과 설문이 이어지고, 응답은 바로 데이터로 쌓입니다.</figcaption>
@@ -591,7 +608,7 @@
         <div class="case-h"><span class="case-n">피드백</span><span class="case-t">웹앱을 혼자 만든 뒤</span></div>
         <h3>'AI로 코딩하기' 매뉴얼로 이어진 일</h3>
         <ul class="flowsteps">
-          <li><span class="k">받은 말</span><span>웹앱을 혼자 만들어 팀에 공유하자 "기획 단계부터 공유했어야 한다"는 의견이 나왔습니다. 제작과 유지보수에 돈과 시간이 든다는 우려도 있었는데, 실제 비용은 0원이라 말로는 설득이 되지 않았습니다.</span></li>
+          <li><span class="k">받은 말</span><span>웹앱을 혼자 만들어 팀에 공유하자 "기획 단계부터 공유했어야 한다"는 의견이 나왔습니다. 말로 설명해서는 설득이 되지 않았습니다.</span></li>
           <li><span class="k">바꾼 것</span><span>모두가 직접 만들 수 있으면 기획부터 함께할 수 있다고 보고, 만드는 과정을 'AI로 코딩하기' 매뉴얼로 정리해 배포했습니다.</span></li>
         </ul>
       </div>
@@ -601,20 +618,27 @@
         <span>연차가 높은 팀장님이 매뉴얼을 따라 웹앱을 완성했습니다.</span>
         <span>다른 팀 동료가 직접 만든 도구를 배포하기 전에 먼저 보여주러 왔습니다.</span>
       </div>
+
+      <h3>조직문화를 스스로 훈련해 보려고 만든 '컬처 시뮬레이터'</h3>
+      <p>Schein, Edmondson, Sull, Kotter의 이론을 바탕으로, 시나리오에서 고른 선택에 따라 리스크와 지표가 바뀌는 도구입니다. React와 Claude API로 만들었습니다.</p>
+      <figure class="media" hidden>
+        <img src="media/simulator.png" alt="컬처 시뮬레이터 화면 네 장. 네 가지 지표를 소개하는 시작 화면, 시나리오와 선택지, 이론을 근거로 한 평가와 리스크, 이론 라이브러리">
+        <figcaption>8개 시나리오에서 선택하면 이론을 근거로 평가와 리스크, 네 가지 지표의 변화를 보여 줍니다.</figcaption>
+      </figure>
     </section>
 
 
     <footer class="end" id="end">
-      <h2 class="closing-h">필요한 게 없으면,<br>배워서 만듭니다</h2>
-      <p>HTML, CSS, JavaScript도, Premiere Pro도, AI 활용도 그 자리에서 필요해서 독학했습니다. 온보딩 웹앱, 실습 기록노트, 커핑 기록 앱, 퀴즈쇼 버저가 모두 그렇게 나왔습니다.</p>
-      <p>조직문화를 스스로 훈련해 보려고 만든 '컬처 시뮬레이터'도 있습니다. Schein, Edmondson, Sull, Kotter의 이론을 바탕으로, 시나리오에서 고른 선택에 따라 리스크와 지표가 바뀌는 도구입니다.</p>
-      <figure class="media" hidden>
-        <img src="media/simulator.png" alt="컬처 시뮬레이터 화면 네 장. 네 가지 지표를 소개하는 시작 화면, 시나리오와 선택지, 이론을 근거로 한 평가와 리스크, 이론 라이브러리">
-        <figcaption>React와 Claude API로 만들었습니다.</figcaption>
-      </figure>
-      <p>KRAFTON 구성원의 성장을 돕는 교육도, 대상의 목소리에서 출발해 구조를 고치는 방식으로 만들어 가고 싶습니다.</p>
-      <p class="bye">읽어 주셔서 감사합니다.</p>
-      <p class="contact"><a href="mailto:bobsemi@me.com">bobsemi@me.com</a></p>
+      <div class="end-in">
+        <div class="end-tag" aria-hidden="true"><span>마치며</span><i></i></div>
+        <div class="end-body" id="endBody">
+          <h2 class="closing-h">필요한 게 없으면,<br>배워서 만듭니다</h2>
+          <p>HTML, CSS, JavaScript도, Premiere Pro도, AI 활용도 그 자리에서 필요해서 독학했습니다. 온보딩 웹앱, 실습 기록노트, 커핑 기록 앱, 퀴즈쇼 버저가 모두 그렇게 나왔습니다.</p>
+          <p>KRAFTON 구성원의 성장을 돕는 교육도, 대상의 목소리에서 출발해 구조를 고치는 방식으로 만들어 가고 싶습니다.</p>
+          <p class="bye">읽어 주셔서 감사합니다.</p>
+          <p class="contact"><a href="mailto:bobsemi@me.com">bobsemi@me.com</a></p>
+        </div>
+      </div>
     </footer>
   </main>
 </div>
@@ -657,7 +681,7 @@
   markNav();
 
   /* 제목이 화면에 들어오면 한 글자씩 나타납니다 */
-  var heads = document.querySelectorAll('h1, .stage h2, .closing-h');
+  var heads = document.querySelectorAll('h1, .stage h2');
   Array.prototype.forEach.call(heads, function(h){
     h.setAttribute('aria-label', h.textContent);
     var n = 0;
@@ -696,6 +720,119 @@
       if (reduce){ m.removeAttribute('autoplay'); m.pause(); m.controls = true; }
     }
   });
+
+  /* ---- 스크롤 효과 ---- */
+  if (!reduce){
+    document.documentElement.classList.add('fx');
+
+    /* 1) 그래프와 목록은 화면에 들어오면 한 번 차오릅니다 */
+    function tag(sel, cls, perGroup){
+      Array.prototype.forEach.call(document.querySelectorAll(sel), function(el, n){
+        el.classList.add(cls);
+        if (!el.style.getPropertyValue('--i')) el.style.setProperty('--i', perGroup ? (el.__i || 0) : 0);
+      });
+    }
+    var groups = [
+      ['.chain', 'span', 'rvl'], ['.voices', 'li', 'rvl'], ['.result', '>div', 'rvl'], ['.stats', '>div', 'rvl'],
+      ['.chips', 'span', 'rvl'], ['.flowsteps', 'li', 'rvl'], ['.names', '>*', 'rvl'], ['.vs', '>*', 'rvl'],
+      ['.cur', '>div', 'rvl'], ['.plan ol', 'li', 'rvl'], ['.sq', 'i', 'rvl'], ['.dots', 'i', 'rvl'],
+      ['.yr', '>div', 'rvl']
+    ];
+    var wraps = [];
+    groups.forEach(function(g){
+      Array.prototype.forEach.call(document.querySelectorAll(g[0]), function(root){
+        var kids = g[1].charAt(0) === '>' ? Array.prototype.filter.call(root.children, function(){return true;}) : root.querySelectorAll(g[1]);
+        Array.prototype.forEach.call(kids, function(k, i){ k.classList.add(g[2]); k.style.setProperty('--i', Math.min(i, 24)); });
+        wraps.push({root: root, items: kids});
+      });
+    });
+    /* 막대는 자라납니다 */
+    Array.prototype.forEach.call(document.querySelectorAll('.tl-bar .seg'), function(el, i){ el.classList.add('grx'); el.style.setProperty('--i', i % 6); });
+    Array.prototype.forEach.call(document.querySelectorAll('.hbar i'), function(el, i){ el.classList.add('grx'); el.style.setProperty('--i', i); });
+    Array.prototype.forEach.call(document.querySelectorAll('.yr i'), function(el){ el.classList.add('gry'); });
+    var growers = document.querySelectorAll('.tl-bar .seg, .hbar i, .yr i');
+    var io2 = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var t = e.target;
+        t.classList.add('go');
+        Array.prototype.forEach.call(t.querySelectorAll('.grx,.gry,.rvl'), function(x){ x.classList.add('go'); });
+        io2.unobserve(t);
+      });
+    }, {rootMargin:'0px 0px -10% 0px'});
+    var seen = [];
+    function watch(el){ if (seen.indexOf(el) < 0){ seen.push(el); io2.observe(el); } }
+    wraps.forEach(function(w){ watch(w.root); });
+    Array.prototype.forEach.call(document.querySelectorAll('.tl, .viz, .result, .yr'), watch);
+    /* 안에 담긴 요소가 컨테이너 없이 단독으로 있을 때 */
+    Array.prototype.forEach.call(document.querySelectorAll('.rvl:not(.go), .grx:not(.go), .gry:not(.go)'), function(x){
+      var host = x.closest('.chain,.voices,.result,.stats,.chips,.flowsteps,.names,.vs,.cur,.plan,.sq,.dots,.yr,.tl,.viz');
+      if (!host) watch(x);
+    });
+
+    /* 2) 숫자 카운트업 */
+    Array.prototype.forEach.call(document.querySelectorAll('.stats b'), function(b){
+      var m = b.textContent.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      var to = +m[1], suf = m[2], started = false;
+      b.textContent = '0' + suf;
+      var cio = new IntersectionObserver(function(es){
+        if (!es[0].isIntersecting || started) return; started = true; cio.disconnect();
+        var t0 = null;
+        function step(t){ if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1400), e = 1 - Math.pow(1 - k, 3);
+          b.textContent = Math.round(to * e) + suf; if (k < 1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      }, {threshold:.6});
+      cio.observe(b);
+    });
+
+    /* 3) 마무리: 처음 닿으면 뿌옇고 흩어져 있다가, 더 내리면 또렷해지며 제자리를 찾습니다 */
+    var end = document.getElementById('end'), body = document.getElementById('endBody');
+    var words = [];
+    function seed(n){ var x = Math.sin(n * 9301 + 49297) * 233280; return x - Math.floor(x); }
+    var wn = 0;
+    function splitWords(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(c){
+        if (c.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(function(part){
+            if (!part) return;
+            if (/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(' ')); return; }
+            var sp = document.createElement('span'); sp.className = 'w'; sp.textContent = part;
+            var n = wn++;
+            words.push({el: sp, dx: (seed(n) - .5) * 520, dy: (seed(n + 77) - .5) * 360, rot: (seed(n + 31) - .5) * 40, d: seed(n + 5) * .35});
+            frag.appendChild(sp);
+          });
+          c.parentNode.replaceChild(frag, c);
+        } else if (c.nodeType === 1 && c.tagName !== 'BR' && c.tagName !== 'A') splitWords(c);
+        else if (c.tagName === 'A'){ var n = wn++; words.push({el: c, dx: (seed(n) - .5) * 520, dy: (seed(n + 77) - .5) * 360, rot: 0, d: .2, block: true}); c.style.display = 'inline-block'; }
+      });
+    }
+    var head = body.querySelector('h2');
+    head.setAttribute('aria-label', head.textContent);
+    splitWords(body);
+    var ticking = false, lastP = -1;
+    function ease(t){ return 1 - Math.pow(1 - t, 3); }
+    function upd(){
+      ticking = false;
+      var r = end.getBoundingClientRect(), span = r.height - window.innerHeight;
+      var p = span > 0 ? Math.max(0, Math.min(1, -r.top / span)) : 1;
+      var t = Math.max(0, Math.min(1, (p - .12) / .66));
+      if (Math.abs(t - lastP) < .002) return; lastP = t;
+      var k = 1 - ease(t);
+      body.style.filter = k > .004 ? 'blur(' + (k * 16).toFixed(1) + 'px)' : 'none';
+      body.style.opacity = (.35 + .65 * (1 - k)).toFixed(3);
+      words.forEach(function(w){
+        var lt = Math.max(0, Math.min(1, (t - w.d * .6) / (1 - w.d * .6)));
+        var kk = 1 - ease(lt);
+        w.el.style.transform = kk > .003 ? 'translate(' + (w.dx * kk).toFixed(1) + 'px,' + (w.dy * kk).toFixed(1) + 'px) rotate(' + (w.rot * kk).toFixed(1) + 'deg)' : 'none';
+      });
+    }
+    function req(){ if (!ticking){ ticking = true; requestAnimationFrame(upd); } }
+    window.addEventListener('scroll', req, {passive:true});
+    window.addEventListener('resize', req);
+    upd();
+  }
 })();
 </script>
 </body>
