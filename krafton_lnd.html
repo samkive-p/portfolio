@@ -211,9 +211,10 @@
   .end-in{padding:72px 0 120px}
   .end h2{font-weight:700;font-size:2.25rem;line-height:1.36;margin:0 0 32px;color:var(--g900);letter-spacing:-.03em}
   html.fx .end{height:230vh;height:230svh}
-  html.fx .end-in{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;padding:0;overflow:hidden}
-  html.fx .end-tag{position:absolute;top:calc(env(safe-area-inset-top,0px) + 76px);left:0;right:0;width:100%;padding-top:0;z-index:2}
-  html.fx .end-body{max-width:696px;margin:0 auto;padding:0 28px;width:100%;will-change:filter}
+  html.fx .end-in{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 72px) 0 28px;overflow:hidden}
+  html.fx .end-tag{width:100%;padding-top:16px;flex:none}
+  html.fx .end-body{max-width:696px;margin:0 auto;padding:0 28px;width:100%;flex:1;display:flex;flex-direction:column;justify-content:center;will-change:filter}
+  @media (max-height:780px){html.fx .end-body p{font-size:.9375rem;line-height:1.65}html.fx .end h2{font-size:1.5rem;margin-bottom:16px}html.fx .end-body .bye{margin-top:22px!important}}
   .end-body .w{display:inline-block;white-space:nowrap;will-change:transform,opacity}
   .end-body .bye{margin-top:36px!important}
   /* 스크롤에 따라 나타나는 그래프와 문장 */
@@ -633,7 +634,7 @@
         <div class="end-tag" aria-hidden="true"><span>마치며</span><i></i></div>
         <div class="end-body" id="endBody">
           <h2 class="closing-h">필요한 게 없으면,<br>배워서 만듭니다</h2>
-          <p>HTML, CSS, JavaScript도, Premiere Pro도, AI 활용도 그 자리에서 필요해서 독학했습니다. 온보딩 웹앱, 실습 기록노트, 커핑 기록 앱, 퀴즈쇼 버저가 모두 그렇게 나왔습니다.</p>
+          <p>저는 흩어져 있던 상상을 하나씩 제자리에 놓아 현실로 실현시키려고 일합니다. HTML, CSS, JavaScript도, Premiere Pro도, AI 활용도 그 자리에서 필요해서 독학했습니다. 온보딩 웹앱, 실습 기록노트, 커핑 기록 앱, 퀴즈쇼 버저가 모두 그렇게 나왔습니다.</p>
           <p>KRAFTON 구성원의 성장을 돕는 교육도, 대상의 목소리에서 출발해 구조를 고치는 방식으로 만들어 가고 싶습니다.</p>
           <p class="bye">읽어 주셔서 감사합니다.</p>
           <p class="contact"><a href="mailto:bobsemi@me.com">bobsemi@me.com</a></p>
