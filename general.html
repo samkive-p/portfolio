@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박세미 | L&amp;D · 조직문화 포트폴리오</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --brand:#1F5C48;
+  --brand-soft:#E6F0EC;
+  --ink:#1E2124;
+  --sub:#5C5F68;
+  --line:#E4E5EA;
+  --bg:#FFFFFF;
+  --panel:#F7F7F9;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--brand:#7CC3A6;--brand-soft:#1A2A24;--ink:#EDEEF2;--sub:#A3A6AF;--line:#2C2E35;--bg:#121317;--panel:#1A1B20;color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+p{margin:0}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.bar b{font-weight:700;letter-spacing:-0.01em}
+.bar nav{display:flex;gap:18px;font-size:14px;color:var(--sub);overflow-x:auto;white-space:nowrap}
+.bar nav a{text-decoration:none}
+.bar nav a:hover,.bar nav a:focus-visible{color:var(--brand)}
+
+/* hero */
+.hero{padding:88px 0 56px}
+.hero .for{font-size:15px;font-weight:600;color:var(--brand);margin-bottom:20px}
+.hero h1{font-size:clamp(34px,5.6vw,60px);line-height:1.22;letter-spacing:-0.035em;font-weight:800;margin:0 0 28px;max-width:16ch}
+.hero .lead{font-size:18px;color:var(--sub);max-width:42em}
+.ctx{margin-top:48px;display:grid;grid-template-columns:repeat(2,minmax(0,280px));border-top:2px solid var(--ink)}
+.ctx div{padding:18px 18px 4px 0}
+.ctx dt{font-size:13px;color:var(--sub)}
+.ctx dd{margin:4px 0 0;font-size:22px;font-weight:700;letter-spacing:-0.02em}
+.ctx-note{font-size:14px;color:var(--sub);margin-top:14px}
+
+/* area */
+.area{padding:72px 0;border-top:1px solid var(--line)}
+.area-head{display:grid;grid-template-columns:280px 1fr;gap:40px;margin-bottom:8px}
+.area-head h2{font-size:28px;letter-spacing:-0.02em;margin:0;line-height:1.3}
+.area-head h2 small{display:block;font-size:14px;font-weight:600;color:var(--brand);letter-spacing:0;margin-bottom:6px}
+.area-head .jd{color:var(--sub);font-size:15px;padding-top:30px}
+
+.case{display:grid;grid-template-columns:280px 1fr;gap:40px;padding:40px 0 0}
+.case + .case{margin-top:24px;border-top:1px dashed var(--line)}
+.case aside .metric{font-size:30px;font-weight:800;color:var(--brand);letter-spacing:-0.03em;line-height:1.2}
+.case aside .metric-t{font-size:14px;color:var(--sub);margin-top:6px}
+.extra{margin-top:28px;padding:16px 20px;background:var(--panel);border-radius:10px;font-size:15px;color:var(--sub)}
+.case aside .metric-t:first-child{font-size:16px;font-weight:700;color:var(--brand)}
+.study{margin-top:40px;max-width:720px}
+.study h3{font-size:19px;margin:0 0 8px;letter-spacing:-0.01em}
+.study p{color:var(--sub)}
+.case h3{font-size:21px;letter-spacing:-0.02em;line-height:1.45;margin:0 0 18px}
+.steps{display:grid;grid-template-columns:76px 1fr;row-gap:14px;column-gap:12px}
+.steps dt{font-size:14px;font-weight:700;color:var(--brand);padding-top:2px}
+.steps dd{margin:0;color:var(--ink)}
+figure{margin:24px 0 0}
+figure video{width:100%;border-radius:10px;display:block;background:var(--panel)}
+figure img{width:100%;max-width:100%;border-radius:10px;display:block;background:var(--panel)}
+figcaption{font-size:13px;color:var(--sub);margin-top:8px}
+
+/* how */
+.how{padding:72px 0;border-top:1px solid var(--line)}
+.how figure{margin-top:28px}
+.how h2{font-size:28px;letter-spacing:-0.02em;margin:0 0 28px}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.how-grid div{background:var(--panel);border-radius:12px;padding:24px}
+.how-grid h3{font-size:17px;margin:0 0 8px;letter-spacing:-0.01em}
+.how-grid p{font-size:15px;color:var(--sub)}
+.how-grid.two{grid-template-columns:repeat(2,1fr)}
+
+/* closing */
+.end{position:relative;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:96px 0 112px;background:#111216;color:#fff}
+.end .wrap{position:relative;z-index:1;width:100%}
+.mosaic{position:absolute;inset:0;pointer-events:none}
+.mosaic i{position:absolute;display:block;background:#1F5C48;clip-path:polygon(50% 0,100% 50%,100% 100%,50% 50%,0 100%,0 50%);opacity:0;transform:translateY(40%);transition:opacity .4s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.mosaic i.on{opacity:1;transform:none}
+.end{transition:background-color .6s ease}
+.end.full{background:#1F5C48}
+.end h2{font-size:clamp(26px,3.8vw,40px);letter-spacing:-0.025em;line-height:1.36;margin:0 0 24px;max-width:24ch;color:#fff}
+.end p{color:rgba(255,255,255,.86);max-width:44em}
+.js .rise{opacity:0;transform:translateY(56px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rise.up{opacity:1;transform:none}
+.contact{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 28px;font-weight:600}
+.contact a{text-decoration:none;border-bottom:1.5px solid rgba(255,255,255,.7);color:#fff}
+
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+
+@media (max-width:820px){
+  .area-head,.case{grid-template-columns:1fr;gap:12px}
+  .area-head .jd{padding-top:0}
+  .ctx{grid-template-columns:1fr 1fr}
+  .how-grid,.how-grid.two{grid-template-columns:1fr}
+  .bar nav{display:none}
+  .hero{padding:56px 0 40px}
+  .area,.how{padding:56px 0}
+  .how .area-head{margin-bottom:0}
+  .steps{grid-template-columns:1fr;row-gap:4px}
+  .steps dd{margin-bottom:12px}
+}
+
+/* ---- 그래프와 애니메이션 ---- */
+:root{--seg:#C7DED4}
+@media (prefers-color-scheme:dark){:root{--seg:#2D4A3F}}
+.viz,.result{margin:22px 0 4px;padding:20px 22px;background:var(--panel);border-radius:16px}
+.result{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0;background:none}
+.result>div{background:var(--panel);border-radius:16px;padding:18px 20px}
+.result span{display:block;font-size:13px;font-weight:600;color:var(--sub)}
+.result b{display:block;font-size:26px;color:var(--brand);letter-spacing:-0.02em;line-height:1.3;margin-top:4px}
+.result b s{color:var(--sub);font-size:16px;font-weight:500;margin-right:4px}
+.result small{display:block;font-size:13px;color:var(--sub)}
+.viz .row{display:grid;grid-template-columns:3.4em 1fr auto;gap:12px;align-items:center;margin:0 0 12px;font-size:13px;font-weight:600;color:var(--sub)}
+.viz .row.wide{grid-template-columns:3.4em 1fr}
+.viz .row b{font-size:14px;color:var(--ink);white-space:nowrap}
+.viz .row b.on{color:var(--brand)}
+.vcap{font-size:12.5px;color:var(--sub);margin-top:4px!important}
+.hbar{height:16px;border-radius:5px;background:var(--bg);overflow:hidden;display:flex}
+.hbar i{display:block;height:100%;background:var(--sub);opacity:.55}
+.hbar i.on{background:var(--brand);opacity:1}
+.hbar i.on2{background:var(--brand);opacity:.35}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dots i{width:11px;height:11px;border-radius:50%;background:var(--sub);opacity:.55}
+.dots i.lt{opacity:.25}
+.dots i.on{background:var(--brand);opacity:1}
+.dots.big{display:grid;grid-template-columns:repeat(25,1fr);gap:6px}
+.dots.big i{width:auto;height:auto;aspect-ratio:1}
+.sq{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:260px}
+.sq i{aspect-ratio:1;border-radius:4px;background:var(--bg)}
+.sq i.bad{background:var(--sub);opacity:.7}
+.sq.after i.bad{background:var(--brand);opacity:1}
+.chain{list-style:none;margin:0;padding:0}
+.chain li{position:relative;padding:8px 0 8px 24px;font-size:15px;line-height:1.55}
+.chain li::before{content:"";position:absolute;left:3px;top:16px;width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.chain li::after{content:"";position:absolute;left:7px;top:29px;bottom:-8px;width:1px;background:var(--line)}
+.chain li:last-child::after{display:none}
+.chain li b{display:block;font-size:13px;color:var(--brand)}
+.names{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bub{background:var(--bg);border-radius:16px 16px 16px 4px;padding:10px 16px;font-weight:700;color:var(--sub);font-size:17px}
+.bub.now{background:var(--brand);color:#fff;border-radius:16px 16px 4px 16px}
+.names em{font-style:normal;font-size:13px;color:var(--sub)}
+.yr{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:end;height:200px}
+.yr div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:13px;color:var(--sub);font-weight:600}
+.yr b{font-size:15px;margin-bottom:6px;color:var(--ink)}
+.yr i{display:block;width:100%;max-width:56px;border-radius:8px 8px 3px 3px;background:var(--sub);opacity:.5;margin-bottom:8px}
+.yr .on i{background:var(--brand);opacity:1}
+.yr .on b{color:var(--brand)}
+.tl-row{display:grid;grid-template-columns:2.4em 1fr;align-items:center;gap:10px;margin:0 0 18px}
+.tl-row>span{font-size:13px;font-weight:600;color:var(--sub)}
+.tl-bar{position:relative;display:flex;height:24px;background:var(--bg);border-radius:6px}
+.seg{height:100%;flex:none}
+.seg.hq{background:var(--ink);min-width:5px;border-radius:2px}
+.seg.fd{background:var(--seg)}
+.seg.range,.hatch{background:repeating-linear-gradient(-45deg,var(--seg) 0 5px,var(--panel) 5px 10px)}
+.flag{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--brand)}
+.flag b{position:absolute;left:8px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;color:var(--brand);font-weight:700}
+.flag.flag-r b{left:auto;right:8px}
+.tl-scale{position:relative;height:1.2em;font-size:11px;color:var(--sub);margin:-8px 0 12px calc(2.4em + 10px)}
+.tl-scale span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+.tl-scale span:first-child{transform:none}
+.tl-scale span:last-child{transform:translateX(-100%)}
+.tl-legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--sub)}
+.tl-legend i{display:inline-block;width:12px;height:10px;margin-right:6px;vertical-align:-1px;border-radius:2px}
+
+/* 스크롤에 따라: 닿기 전엔 바닥에, 닿으면 제자리, 지나가면 천장으로 */
+.js .anim .pop{transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .6s ease;transition-delay:calc(var(--i,0) * 45ms)}
+.js .anim.below .pop{transform:translateY(48px);opacity:0}
+.js .anim.above .pop{transform:translateY(-48px);opacity:0}
+.js .anim .grow-y{transform-origin:bottom;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .6s;transition-delay:calc(var(--i,0) * 90ms)}
+.js .anim.below .grow-y{transform:scaleY(0)}
+.js .anim.above .grow-y{transform:translateY(-60px) scaleY(.2);opacity:0}
+.js .anim .grow-x{transform-origin:left;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .6s;transition-delay:calc(var(--i,0) * 90ms)}
+.js .anim.below .grow-x{transform:translateY(24px) scaleX(0)}
+.js .anim.above .grow-x{transform:translateY(-24px) scaleX(0);opacity:0}
+
+/* 제목 글자 나타나기 */
+.rv .w{display:inline-block;white-space:nowrap}
+.rv .ch{display:inline-block;opacity:0;filter:blur(6px);transform:translateY(.12em);transition:opacity .45s ease,filter .45s ease,transform .45s ease;transition-delay:calc(var(--i) * 26ms);white-space:pre}
+.rv.in .ch{opacity:1;filter:none;transform:none}
+
+@media (max-width:820px){
+  .result{grid-template-columns:1fr}
+  .dots.big{gap:4px}
+  .yr{height:170px;gap:8px}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .mosaic i{opacity:1;transform:none;transition:none}
+  .end{background:#1F5C48}
+  .js .anim .pop,.js .anim .grow-y,.js .anim .grow-x{transition:none!important;transform:none!important;opacity:revert!important}
+  .rv .ch{opacity:1;filter:none;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <b>박세미</b>
+    <nav aria-label="섹션">
+      <a href="#ld">교육체계</a>
+      <a href="#leader">리더 육성</a>
+      <a href="#culture">조직문화</a>
+      <a href="#ax">AI 확산</a>
+      <a href="#how">일하는 방식</a>
+      <a href="#contact">연락처</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="for">L&amp;D · 조직문화 담당자 박세미 포트폴리오</p>
+    <h1>교육으로 시작한 변화가 문화로 이어지게 만듭니다.</h1>
+    <p class="lead">임직원 300명, 매장 약 40곳 규모의 스페셜티 커피 회사 테라로사의 3인 교육서비스팀에서 입문부터 리더십까지 전사 교육체계를 운영하고, 호칭 변화와 참여형 프로그램 같은 조직문화 일을 함께 맡아 왔습니다. 필요한 도구가 없으면 직접 배워서 만듭니다.</p>
+    <dl class="ctx">
+      <div><dt>직접 교육·평가한 구성원</dt><dd>749명</dd></div>
+      <div><dt>신입 랜딩 기간</dt><dd>최대 1년 → 평균 4개월</dd></div>
+    </dl>
+    <p class="ctx-note">교육서비스팀 5년(2022.01~), 그 전 매장 바리스타 3년. 아래 사례는 교육체계와 온보딩, 리더 육성, 조직문화, AI 확산 순서로 정리했습니다.</p>
+  </div>
+</section>
+<section class="area" id="ld">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>L&amp;D</small>교육체계와 온보딩</h2>
+      <p class="jd">구성원 생애주기에 맞춘 교육을 설계하고, 효과를 조사해 고치고, 콘텐츠를 직접 만듭니다.</p>
+    </div>
+    <article class="case">
+      <aside>
+        <div class="metric">입사부터 리더까지</div>
+        <div class="metric-t">구성원 생애주기별 교육체계. 직무 교육1은 100%, 입문 교육은 약 40%를 직접 강의</div>
+      </aside>
+      <div>
+        <h3>입사 첫날부터 리더가 될 때까지 이어지는 교육체계를 운영합니다</h3>
+        <dl class="steps">
+          <dt>구조</dt><dd>연차와 역할에 따라 필요한 교육을 정해 두고, 일정과 인원, 교재와 예산, 강사 섭외까지 운영합니다. 인사팀이 채용한 인원이 출근하는 순간부터 웰커밍과 교육은 교육팀이 맡습니다.</dd>
+          <dt>원칙</dt><dd>각 분야는 그 분야 전문가가 가르칩니다. 커피는 사내 커피연구소, 리더십은 자격을 갖춘 외부 강사, 품질은 점검 담당자에게 맡기고, 저는 과정 설계와 연결을 맡습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="테라로사 교육 생애주기. 입문 교육, 직무 교육1, 직무 교육2, 1년차 커핑 초급, 2년차 커핑 중급과 기기 장비 교육, 3년차 일본 커피 연수와 커핑 고급, 이후 리더와 부리더 교육.">
+          <ol class="chain" aria-hidden="true">
+            <li class="pop" style="--i:0"><b>입사 첫날</b>입문 교육 3일</li>
+            <li class="pop" style="--i:1"><b>1개월 뒤</b>직무 교육1 3일, 이어서 직무 교육2 2일</li>
+            <li class="pop" style="--i:2"><b>1년차</b>커핑 초급</li>
+            <li class="pop" style="--i:3"><b>2년차</b>커핑 중급, 기기 장비 교육</li>
+            <li class="pop" style="--i:4"><b>3년차</b>일본 커피 연수, 커핑 고급</li>
+            <li class="pop" style="--i:5"><b>그 이후</b>리더, 부리더 교육</li>
+          </ol>
+        </div>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric">최대 1년 → 평균 4개월</div>
+        <div class="metric-t">신입의 현장 랜딩 기간. 연간 교육 인원 99명 → 209명</div>
+      </aside>
+      <div>
+        <h3>매장 1.5배 확장에 맞춰 온보딩 구조를 다시 설계했습니다</h3>
+        <dl class="steps">
+          <dt>과제</dt><dd>확장 목표에 필요한 신입은 한 해 200명이었지만, 본사 4일, 현장 3~4개월, 본사 8일, 현장 3~8개월이던 기존 구조로는 현장 랜딩까지 최대 1년이 걸렸습니다. 교육팀 업무가 두 배가 되는 안을 회의에서 먼저 제안했습니다.</dd>
+          <dt>실행</dt><dd>본사 3일, 현장 1개월, 본사 3일, 현장 1개월, 본사 2일 구조로 바꾸고 교육 사이클을 월 1회에서 2회로 늘렸습니다. 품질 하락을 걱정해 따르지 않던 현장 리더는 가장 협조하지 않던 분부터 1:1로 설득하며 부족하면 직접 가서 추가 교육하겠다고 약속했고, 날짜 단위 커리큘럼은 큰 범위와 순서만 남겨 리더 재량을 넓혔습니다.</dd>
+          <dt>변화</dt><dd>신규 입사자 70%가 3개월 내 소프트랜딩(현장 리더 평가 기준)에 도달했고, 2026년은 11월까지 292명을 교육했습니다. 약속대로 한 번 출동한 뒤 가장 부정적이던 리더가 본사에 협조적으로 바뀌었습니다.</dd>
+        </dl>
+        <div class="viz anim tl" aria-label="온보딩 구조 전후. 전에는 길면 1년, 후에는 평균 4개월에 랜딩.">
+          <div class="tl-row" aria-hidden="true"><span>전</span>
+            <div class="tl-bar">
+              <i class="seg hq grow-x" style="width:1.1%;--i:0"></i><i class="seg fd grow-x" style="width:25%;--i:1"></i><i class="seg range grow-x" style="width:8.3%;--i:2"></i><i class="seg hq grow-x" style="width:2.2%;--i:3"></i><i class="seg fd grow-x" style="width:25%;--i:4"></i><i class="seg range grow-x" style="width:38.4%;--i:5"></i>
+              <span class="flag flag-r pop" style="left:99.5%;--i:7"><b>길면 1년</b></span>
+            </div>
+          </div>
+          <div class="tl-row" aria-hidden="true"><span>후</span>
+            <div class="tl-bar">
+              <i class="seg hq grow-x" style="width:.8%;--i:2"></i><i class="seg fd grow-x" style="width:8.3%;--i:3"></i><i class="seg hq grow-x" style="width:.8%;--i:4"></i><i class="seg fd grow-x" style="width:8.3%;--i:5"></i><i class="seg hq grow-x" style="width:.6%;--i:6"></i>
+              <span class="flag pop" style="left:33.3%;--i:8"><b>평균 4개월에 랜딩</b></span>
+            </div>
+          </div>
+          <div class="tl-scale" aria-hidden="true"><span style="left:0%">0</span><span style="left:25%">3개월</span><span style="left:50%">6개월</span><span style="left:75%">9개월</span><span style="left:100%">12개월</span></div>
+          <div class="tl-legend" aria-hidden="true"><span><i style="background:var(--ink)"></i>본사 교육</span><span><i style="background:var(--seg)"></i>현장</span><span><i class="hatch"></i>사람마다 달랐던 기간</span></div>
+        </div>
+        <div class="viz anim" aria-label="연도별 직접 교육한 신입. 2022년 74명, 2023년 75명, 2024년 99명, 2025년 209명, 2026년 11월까지 292명.">
+          <div class="yr"><div aria-hidden="true"><b class="pop" style="--i:2">74</b><i class="grow-y" style="height:25%;--i:0"></i>2022</div><div aria-hidden="true"><b class="pop" style="--i:3">75</b><i class="grow-y" style="height:26%;--i:1"></i>2023</div><div aria-hidden="true"><b class="pop" style="--i:4">99</b><i class="grow-y" style="height:34%;--i:2"></i>2024</div><div class="on" aria-hidden="true"><b class="pop" style="--i:5">209</b><i class="grow-y" style="height:72%;--i:3"></i>2025</div><div class="on" aria-hidden="true"><b class="pop" style="--i:6">292</b><i class="grow-y" style="height:100%;--i:4"></i>2026</div></div>
+          <p class="vcap">직접 교육한 신입 인원이에요. 2026년은 11월까지예요. 진한 막대가 교육 사이클을 월 2회로 늘린 뒤예요.</p>
+        </div>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric">4시간 → 30분</div>
+        <div class="metric-t">기수별 평가표 작성 시간. 상품 누락 불만은 월 3~4건 → 9개월 2건</div>
+      </aside>
+      <div>
+        <h3>조사로 문제를 찾고, 평가 방식을 고도화했습니다</h3>
+        <dl class="steps">
+          <dt>분석</dt><dd>교육마다 효과와 만족도를 조사합니다. 직무 교육 효과를 점장들에게 물으니 신입은 실습 테스트 긴장으로 실력을 못 보여주고, 현장에는 연습할 시간과 봐줄 사람이 부족했습니다. 고객 VOC에서는 상품 누락 불만이 반복됐습니다.</dd>
+          <dt>고도화</dt><dd>이론을 줄이고 실습을 늘렸으며, 실습 테스트를 없애는 대신 교육생이 받은 피드백을 직접 기록하는 웹앱을 만들어 기록이 교육 결과표로 자동 변환되게 했습니다. 종이로 채점하던 온보딩 필기시험과 서베이도 응답이 바로 데이터로 쌓이게 바꿨습니다. 상품 누락 불만은 건별로 추적해 신입 응대자에게 몰린다는 것을 확인하고 온보딩에서 강조했습니다.</dd>
+          <dt>변화</dt><dd>결과표는 교육생과 점장, 슈퍼바이저에게 전달됩니다. 상품 누락 불만은 2026년 1~9월 9개월 동안 2건이었습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="평가표 작성 시간 전 4시간, 후 30분.">
+          <div class="row" aria-hidden="true"><span>전</span><div class="hbar"><i class="grow-x" style="width:100%"></i></div><b>4시간</b></div>
+          <div class="row" aria-hidden="true"><span>후</span><div class="hbar"><i class="grow-x on" style="width:12.5%;--i:3"></i></div><b class="on">30분</b></div>
+          <p class="vcap">기수마다 평가표를 쓰는 데 걸린 시간이에요.</p>
+        </div>
+        <figure class="media" data-img="feedbacknote-student" hidden>
+          <img alt="교육생 화면 네 장. 기수 코드와 이름으로 입장, 출석 체크와 메뉴별 피드백 기록, 연습 중과 교정됨으로 나뉜 모아보기, 베스트 사진과 만족도를 내는 마무리">
+          <figcaption>교육생 화면입니다. 실습 중 받은 피드백을 메뉴와 항목별로 남기고, 고쳐지면 스스로 교정됨을 체크합니다.</figcaption>
+        </figure>
+        <figure class="media" data-img="feedbacknote-teacher" hidden>
+          <img alt="강사 화면. 기수별 입장 인원, 기록된 피드백 수, 사진과 만족도 제출 현황, 교육생별 출석과 피드백 표">
+          <figcaption>강사 화면입니다. 출석, 피드백, 사진, 만족도가 기수별로 한곳에 모입니다.</figcaption>
+        </figure>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric">29편</div>
+        <div class="metric-t">교육 영상, 2025~2026년 (타 부서 의뢰 10편 포함). 298쪽 브랜드 매뉴얼북</div>
+      </aside>
+      <div>
+        <h3>내부 교육 콘텐츠를 직접 만들고, 외부 과정을 연결합니다</h3>
+        <dl class="steps">
+          <dt>내부</dt><dd>Premiere Pro를 독학해 실습 영상과 2026년 전사 시무식 영상을 만들고, 팀이 콘텐츠를 만드는 과정을 표준화했습니다. 부서마다 말이 달랐던 브랜드 가치와 점포 기준은 약 1년간 기획하고 써서 298쪽 매뉴얼북에 담았습니다.</dd>
+          <dt>외부</dt><dd>리더십은 외부 전문 강사, CPR은 인근 소방서와 연결했고, 교육 재료비, 교육생 이동과 숙박, 교육 자료와 웰컴 기프트 예산을 집행합니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="교육 영상 2025년 12편, 2026년 17편(타 부서 의뢰 10편 포함).">
+          <div class="row" aria-hidden="true"><span>2025</span><div class="hbar"><i class="grow-x" style="width:70.6%"></i></div><b>12편</b></div>
+          <div class="row" aria-hidden="true"><span>2026</span><div class="hbar"><i class="grow-x on" style="width:41.2%;--i:2"></i><i class="grow-x on2" style="width:58.8%;--i:4"></i></div><b class="on">17편</b></div>
+          <p class="vcap">2026년 막대의 옅은 부분이 베이커리팀 의뢰로 만든 10편이에요.</p>
+        </div>
+        <figure class="media" data-video="jobvideo" hidden>
+          <video muted loop playsinline autoplay preload="metadata" aria-label="직무 교육 실습 영상의 한 장면"></video>
+          <figcaption>기획, 촬영, 편집까지 직접 만든 실습 영상의 한 장면입니다.</figcaption>
+        </figure>
+        <figure class="media" data-img="manual" hidden>
+          <img alt="298쪽 브랜드 매뉴얼북 실물">
+          <figcaption>298쪽 브랜드 매뉴얼북 실물입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="area" id="leader">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>리더 육성</small>리더 교육과 차기리더</h2>
+      <p class="jd">현장 리더의 어려움에서 과정을 만들고, 다음 리더를 같은 기준으로 알아봅니다.</p>
+    </div>
+    <article class="case">
+      <aside>
+        <div class="metric">약 70% → 약 30%</div>
+        <div class="metric-t">품질 점검 C등급 이하 매장 비율</div>
+      </aside>
+      <div>
+        <h3>점장들에게 어려움을 묻고, 그 답으로 과정을 바꿨습니다</h3>
+        <dl class="steps">
+          <dt>운영</dt><dd>전 매장 점장과 부점장을 대상으로 분기마다 리더십 교육을 운영합니다. 매장이 늘며 리더가 늘어나, 리더십과 품질 관리 기준을 맞추기 위해 시작했습니다.</dd>
+          <dt>이슈</dt><dd>회사 목표가 영업이익 성장으로 바뀌며 점장이 매출, 비용, 인건비까지 책임지게 됐습니다. 품질 교육 직후에도 같은 항목의 품질 점검(QSC) 감점이 반복됐습니다.</dd>
+          <dt>개선</dt><dd>타 부서와 소통할 때 가장 어려운 점을 물어 매출 분석 용어와 숫자라는 답을 받고, 관련 부서에 요청해 손익(P&amp;L) 교육을 열었습니다. 맛 위주였던 품질 교육은 QSC 점검 담당자가 다발 감점 항목 중심으로 진행하도록 바꿨고, 인근 소방서 CPR 교육도 더했습니다.</dd>
+          <dt>변화</dt><dd>품질 C등급 이하 매장 비율이 크게 줄었고, 교육 후 "내 리더십이 오래된 방식이라는 걸 깨달았다"는 후기를 받았습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="품질 C등급 이하 매장 비율. 전 약 70%, 후 약 30%.">
+          <div class="row" aria-hidden="true"><span>전</span><div class="sq"><i class="pop bad" style="--i:0"></i><i class="pop bad" style="--i:1"></i><i class="pop bad" style="--i:2"></i><i class="pop bad" style="--i:3"></i><i class="pop bad" style="--i:4"></i><i class="pop bad" style="--i:5"></i><i class="pop bad" style="--i:6"></i><i class="pop" style="--i:7"></i><i class="pop" style="--i:8"></i><i class="pop" style="--i:9"></i></div><b>약 70%</b></div>
+          <div class="row" aria-hidden="true"><span>후</span><div class="sq after"><i class="pop bad" style="--i:10"></i><i class="pop bad" style="--i:11"></i><i class="pop bad" style="--i:12"></i><i class="pop" style="--i:13"></i><i class="pop" style="--i:14"></i><i class="pop" style="--i:15"></i><i class="pop" style="--i:16"></i><i class="pop" style="--i:17"></i><i class="pop" style="--i:18"></i><i class="pop" style="--i:19"></i></div><b class="on">약 30%</b></div>
+          <p class="vcap">칸 하나가 매장의 10%, 색칠된 칸이 품질 C등급 이하 매장이에요.</p>
+        </div>
+        <figure class="media" data-img="leader" hidden>
+          <img alt="점장과 부점장 교육 현장. 강사가 화면 앞에서 설명하고 참석자들이 앉아서 듣고 있다">
+          <figcaption>점장과 부점장 분기 교육 현장입니다.</figcaption>
+        </figure>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric-t">다음 리더를 알아보고 키우기</div>
+      </aside>
+      <div>
+        <h3>차기리더를 같은 기준으로 인정하고, 리더 과정으로 이어지게 했습니다</h3>
+        <dl class="steps">
+          <dt>발굴</dt><dd>분기마다 리더와 차기리더를 QSC와 미스터리 쇼퍼 결과라는 같은 기준으로 선정해 시상합니다. 누가 다음 리더 후보인지가 기준으로 드러나게 하는 장치입니다.</dd>
+          <dt>육성</dt><dd>교육 생애주기의 마지막 단계를 리더와 부리더 교육으로 두고, 리더십 교육 후에는 다음에 받고 싶은 교육과 어떤 리더로 변화할지를 물어 다음 과정 설계에 반영합니다.</dd>
+          
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="area" id="culture">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>조직문화</small>변화관리와 참여형 문화</h2>
+      <p class="jd">공지로 끝나는 변화를 현장에 정착시키고, 구성원이 스스로 참여하는 자리를 만듭니다.</p>
+    </div>
+    <article class="case">
+      <aside>
+        <div class="metric">4년, 전 현장</div>
+        <div class="metric-t">공지만 있던 님 호칭의 정착</div>
+      </aside>
+      <div>
+        <h3>의견을 내기 어려운 분위기를, 호칭부터 바꿔 풀었습니다</h3>
+        <dl class="steps">
+          <dt>진단</dt><dd>업무에 필요한 의견이나 질문이 있어도 쉽게 꺼내지 못하는 분위기가 있었습니다. 본부장님과 원인을 논의한 끝에 선후배로 부르는 도제식 관계와 경직된 호칭이 원인이라고 결론 냈습니다. 완전히 수평적인 관계는 어렵더라도, 호칭만이라도 님으로 바꾸면 의견을 내기 쉬워질 것이라고 판단했습니다.</dd>
+          <dt>개선</dt><dd>인사팀이 호칭 변경을 공지했지만 공지만으로는 현장이 바뀌지 않았습니다. 신입에게 높아 보이는 교육 담당자인 제가 먼저 세미님으로 저를 소개하고, 영향력 있는 현장 리더들을 1:1로 만나 리더 모임에서 서로를 님으로 부르는 모습을 먼저 보여주자고 제안했습니다. 신입은 입사 첫날부터 새 호칭을 쓰게 했습니다.</dd>
+          <dt>변화</dt><dd>리더 사이의 경쟁심이 있는 매장부터 번져 4년에 걸쳐 전 현장에 정착했습니다. 교육에 다시 모인 신입 동기들이 서로를 OO님으로 부르는 대화에서 정착을 확인했습니다.</dd>
+          <dt>회고</dt><dd>오랜 시간에 걸친 변화라 전후를 정량적으로 조사하지 못한 것이 아쉽습니다. 다음 문화 프로젝트에서는 시작 전에 기준이 될 진단부터 하겠습니다.</dd>
+        </dl>
+        <div class="viz anim names" aria-label="호칭 변화. 선배님에서 세미님으로, 4년.">
+          <span class="bub pop" style="--i:0" aria-hidden="true"><s>선배님</s></span>
+          <em class="pop" style="--i:1" aria-hidden="true">4년</em>
+          <span class="bub now pop" style="--i:2" aria-hidden="true">세미님</span>
+        </div>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric-t">회사 이름에 담긴 가치</div>
+      </aside>
+      <div>
+        <h3>회사 이름에 담긴 가치를 온보딩의 언어로 만들었습니다</h3>
+        <dl class="steps">
+          <dt>배경</dt><dd>테라로사는 커피가 잘 자라는 붉은 토양이라는 뜻으로, 산지 중심의 커피를 하는 회사라는 가치가 이름에 담겨 있습니다. 하지만 신입에게는 매장의 바쁜 업무가 먼저 다가옵니다.</dd>
+          <dt>실행</dt><dd>온보딩 곳곳에서 산지와 산지 사람들의 이야기를 반복합니다. 다음 교육에서 이름의 뜻을 다시 묻고, 응대 실습에서 싱글오리진마다 어떤 커피인지 손님에게 설명하듯 답하게 하고, 온보딩을 마칠 때 스페셜티 커피 회사 바리스타의 자세를 직접 적게 합니다.</dd>
+          <dt>변화</dt><dd>신입들이 마지막 글에서 공통적으로 산지에 대한 이해를 이야기하고, 미스터리 쇼퍼 결과지에도 원두를 아주 전문적으로 설명했다는 평가가 나옵니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="가치를 반복하는 흐름. 전하기, 다시 묻기, 말해 보기, 적어 보기.">
+          <ol class="chain" aria-hidden="true">
+            <li class="pop" style="--i:0"><b>전하기</b>온보딩 곳곳의 산지와 산지 사람들 이야기</li>
+            <li class="pop" style="--i:1"><b>다시 묻기</b>다음 교육에서 테라로사라는 이름의 뜻</li>
+            <li class="pop" style="--i:2"><b>말해 보기</b>응대 실습에서 싱글오리진 설명</li>
+            <li class="pop" style="--i:3"><b>적어 보기</b>온보딩 마지막, 스페셜티 바리스타의 자세</li>
+          </ol>
+        </div>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric">매주 20~30명</div>
+        <div class="metric-t">자발 참여, 임원진 전원 참석</div>
+      </aside>
+      <div>
+        <h3>전사 커핑을, 구성원이 구성원에게 설명하는 자리로 바꿨습니다</h3>
+        <dl class="steps">
+          <dt>과제</dt><dd>매주 금요일 커핑 세션을 맡았을 때, 본사 구성원은 회사가 파는 커피를 잘 몰랐고 참여 기록도 남지 않았습니다.</dd>
+          <dt>실행</dt><dd>목적을 본사 구성원도 판매 커피를 이해하고 품질을 함께 확인하는 자리로 정하고, 자발 참여와 서서 진행하는 형식으로 바꿨습니다. 블렌딩 상세가 공개되지 않아 구매팀에 요청해 로스팅 일자별 생두 구성을 받아 설명했고, 개인별로 남기는 커핑 기록 웹앱도 직접 만들었습니다.</dd>
+          <dt>변화</dt><dd>세션 밖에서 커핑을 공부해 오거나 개인 커핑 스푼을 사 오는 임원이 생겼습니다. 지금은 신규 입사자가 오면 교육팀이 아니라 오래 참여한 임원이 먼저 설명해 줍니다.</dd>
+        </dl>
+        <div class="result anim" aria-label="매주 20~30명 참석. 세션을 설명하는 사람이 교육팀에서 구성원으로 바뀜.">
+          <div class="pop" style="--i:0"><span>매주 금요일 참석</span><b>20~30명</b><small>임원진 전원 참석</small></div>
+          <div class="pop" style="--i:1"><span>세션을 설명하는 사람</span><b><s>교육팀</s> 구성원</b><small>오래 참여한 임원이 신규 입사자에게</small></div>
+        </div>
+        <figure class="media" data-img="cupping" hidden>
+          <img alt="금요일 커핑 세션. 화면에 로스팅 일자별 블렌딩 구성이 띄워져 있고, 구성원들이 서서 커핑하고 있다">
+          <figcaption>로스팅 일자별 블렌딩 구성을 띄워 두고 함께 커핑하는 금요일 세션입니다.</figcaption>
+        </figure>
+      </div>
+    </article><article class="case">
+      <aside>
+        <div class="metric-t">인정과 소통의 채널</div>
+      </aside>
+      <div>
+        <h3>기준이 분명한 인정과, 현장에 닿는 소통 채널</h3>
+        <dl class="steps">
+          <dt>인정</dt><dd>분기별 리더와 차기리더 시상식을 QSC와 미스터리 쇼퍼 점검 결과를 기준으로 기획하고 운영합니다.</dd>
+          <dt>소통</dt><dd>현장직은 회사 PC가 없다는 점에서 출발해, 사내소식지를 휴대폰으로 여는 웹 페이지로 만들어 지금까지 5회 발행했습니다.</dd>
+          <dt>환대</dt><dd>신규 입사자 웰컴 기프트를 업무에 필요한 앞치마와 자사 상품으로 직접 구성해 연 200세트 안팎을 준비합니다.</dd>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="area" id="ax">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>일하는 방식</small>AI로 일하는 방식을 넓히기</h2>
+      <p class="jd">혼자 만든 도구를 동료 모두가 만들 수 있는 방법으로 바꿨습니다.</p>
+    </div>
+    <article class="case">
+      <aside>
+        <div class="metric">비용 0원</div>
+        <div class="metric-t">휴대폰으로 여는 온보딩 웹앱, 그리고 AI로 코딩하기 매뉴얼</div>
+      </aside>
+      <div>
+        <h3>한 사람의 역량을, 동료들이 함께 쓰는 역량으로 넓혔습니다</h3>
+        <dl class="steps">
+          <dt>과제</dt><dd>테라로사 교육이 좋다는 말을 듣고 입사하는 신입이 많았지만, 현장직은 회사 PC가 없고 필기시험은 종이로 걷어 채점하고 스캔했습니다.</dd>
+          <dt>실행</dt><dd>개인 휴대폰으로 접속하는 온보딩 웹앱을 AI로 만들었습니다. 혼자 만들어 공유하자 기획부터 함께했어야 한다는 반발이 있었고, 말로는 설득되지 않아 누구나 만들 수 있도록 제작 과정을 AI로 코딩하기 매뉴얼로 정리해 공유했습니다.</dd>
+          <dt>변화</dt><dd>매뉴얼을 따라 동료가 웹 대시보드를, 연차 높은 팀장이 웹앱을 완성했고, 다른 팀 동료와 부장급 구성원에게도 개별 AI 교육을 했습니다.</dd>
+        </dl>
+        <div class="viz anim" aria-label="AI로 코딩하기 매뉴얼 공개 이후 퍼진 흐름">
+          <ol class="chain" aria-hidden="true">
+            <li class="pop" style="--i:0">제작 과정을 AI로 코딩하기 매뉴얼로 정리해 공유했어요.</li>
+            <li class="pop" style="--i:1">한 동료가 웹 대시보드를 만들었어요.</li>
+            <li class="pop" style="--i:2">연차가 높은 팀장님이 매뉴얼을 따라 웹앱을 완성했어요.</li>
+            <li class="pop" style="--i:3">다른 팀 동료가 직접 만든 도구를 먼저 보여주러 왔어요.</li>
+          </ol>
+        </div>
+        <figure class="media" data-img="webapp" hidden>
+          <img alt="현장 직원이 휴대폰으로 접속하는 온보딩 웹앱 화면">
+          <figcaption>현장 직원이 개인 휴대폰으로 여는 온보딩 웹앱입니다. 과정을 마칠 때마다 진행률이 차오르고, 마지막 필기시험과 설문은 바로 데이터로 쌓입니다.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="area-head">
+      <h2><small>일하는 방식</small>진단하고, 연결하고, 직접 실행합니다</h2>
+      <p class="jd">사례들에 공통으로 드러나는 네 가지입니다.</p>
+    </div>
+    <div class="how-grid two" style="margin-top:28px">
+      <div><h3>원인부터 진단합니다</h3><p>의견이 안 나오는 분위기는 호칭에서, 반복되는 감점은 교육과 점검 기준의 차이에서, 현장 저항은 품질 불안과 지나치게 촘촘한 커리큘럼에서 원인을 찾았습니다.</p></div>
+      <div><h3>서로 다른 쪽을 연결합니다</h3><p>본사와 전국 매장, 리더와 신입, 숫자를 쓰는 부서와 현장 사이에서 같은 언어로 이야기할 자리를 만들어 왔습니다. 인사, 구매, 품질, 연구소, 외부 강사를 잇는 창구 역할을 합니다.</p></div>
+      <div><h3>직접 실행해 결과를 만듭니다</h3><p>"부족하면 직접 가겠다"는 약속을 실제 출동으로 지켰고, 영상이 필요하면 편집을 독학했고, 도구가 없으면 AI로 만들었습니다.</p></div>
+      <div><h3>참여하고 싶게 만듭니다</h3><p>약 5년간 교육하며 하고 싶은 말보다 듣는 사람이 듣고 싶게 만드는 것이 중요하다는 걸 배웠습니다. 2인 1조 응대 실습, 버저를 누르는 퀴즈쇼처럼 참여하고 싶어지는 장치를 먼저 설계합니다.</p></div>
+    </div>
+    <div class="study">
+      <h3>조직문화를 이론으로 다시 봅니다</h3>
+      <p>Schein, Edmondson, Sull, Kotter의 조직문화 이론으로 시나리오별 리스크와 지표 변화를 보여주는 컬처 시뮬레이터를 React와 Claude API로 만들며 공부하고 있습니다.</p>
+      <figure class="media" data-img="simulator" hidden>
+        <img alt="컬처 시뮬레이터 화면 네 장">
+        <figcaption>시나리오에서 선택하면 AI가 조직문화 이론을 근거로 평가하고, 놓친 리스크와 심리적 안전감, 신뢰와 자율성, 구조적 정합성, 변화 수용성의 변화를 보여 줍니다.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="end" id="contact">
+  <div class="mosaic" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="rise" style="--r:0">서로 다른 나무를 잇는 균근처럼 일합니다.</h2>
+    <p class="rise" style="--r:1">자작나무와 전나무는 계절을 나눠 양분을 만들고, 땅속의 균근이 두 나무 사이로 그 양분이 오가는 길이 되어 줍니다. 균근은 눈에 띄지 않지만, 덕분에 나무들은 각자 가장 잘하는 계절에 집중하며 함께 자랍니다.</p>
+    <p class="rise" style="--r:2;margin-top:14px">저는 본사와 현장, 리더와 신입, 서로 다른 언어를 쓰던 부서 사이에서 그런 길을 내 왔습니다. 직군과 일하는 장소가 달라도 구성원 모두가 각자의 계절에 집중할 수 있도록, 교육과 문화를 잇는 일을 이어 가고 싶습니다.</p>
+    <div class="contact rise" style="--r:3">
+      <a href="mailto:bobsemi@me.com">bobsemi@me.com</a>
+      <a href="tel:01031021691">010-3102-1691</a>
+    </div>
+  </div>
+</section>
+</main>
+<script>
+(function(){
+  /* 사진과 영상: index.html과 같은 폴더, media 폴더, 토스 포트폴리오의 media 폴더 순서로 찾고, 있을 때만 보여줍니다 */
+  var bases = ['', 'media/', '../toss/media/'];
+  var imgExts = ['png','jpg','jpeg','webp','PNG','JPG','JPEG'];
+  var vidExts = ['mp4','mov','webm','MP4','MOV'];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function seek(fig, el, name, exts, evt){
+    var list = [];
+    bases.forEach(function(b){ exts.forEach(function(e){ list.push(b + name + '.' + e); }); });
+    var i = 0;
+    function next(){ if (i < list.length) el.src = list[i++]; }
+    el.addEventListener(evt, function(){ fig.hidden = false; });
+    el.addEventListener('error', next);
+    next();
+  }
+  document.querySelectorAll('figure.media[data-img]').forEach(function(fig){
+    seek(fig, fig.querySelector('img'), fig.getAttribute('data-img'), imgExts, 'load');
+  });
+  document.querySelectorAll('figure.media[data-video]').forEach(function(fig){
+    var v = fig.querySelector('video');
+    if (reduce){ v.removeAttribute('autoplay'); v.controls = true; }
+    seek(fig, v, fig.getAttribute('data-video'), vidExts, 'loadeddata');
+  });
+})();
+</script>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 그래프: 화면 아래에 있으면 바닥, 화면 안이면 제자리, 위로 지나가면 천장 */
+  var vis = document.querySelectorAll('.anim');
+  function place(el, inView){
+    el.classList.remove('below','above','in');
+    if (inView) { el.classList.add('in'); return; }
+    var r = el.getBoundingClientRect();
+    el.classList.add(r.top > window.innerHeight / 2 ? 'below' : 'above');
+  }
+  if (reduce || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(vis, function(el){ el.classList.add('in'); });
+  } else {
+    Array.prototype.forEach.call(vis, function(el){ place(el, false); });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ place(e.target, e.isIntersecting); });
+    }, {rootMargin:'-12% 0px -12% 0px', threshold:0});
+    Array.prototype.forEach.call(vis, function(el){ io.observe(el); });
+  }
+
+  /* 제목이 화면에 들어오면 한 글자씩 나타나요 */
+  var heads = document.querySelectorAll('h1, .area-head h2');
+  Array.prototype.forEach.call(heads, function(h){
+    h.setAttribute('aria-label', h.textContent);
+    var n = 0;
+    Array.prototype.slice.call(h.childNodes).forEach(function(node){
+      if (node.nodeType !== 3) { if (node.setAttribute) node.setAttribute('aria-hidden','true'); return; }
+      var frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(function(part){
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+        var w = document.createElement('span');
+        w.className = 'w'; w.setAttribute('aria-hidden','true');
+        Array.prototype.forEach.call(part, function(ch){
+          var sp = document.createElement('span');
+          sp.className = 'ch'; sp.style.setProperty('--i', n++); sp.textContent = ch; w.appendChild(sp);
+        });
+        frag.appendChild(w);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    h.classList.add('rv');
+  });
+  if (reduce || !('IntersectionObserver' in window)){
+    Array.prototype.forEach.call(heads, function(h){ h.classList.add('in'); });
+  } else {
+    var hio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); hio.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -12% 0px'});
+    Array.prototype.forEach.call(heads, function(h){ hio.observe(h); });
+  }
+
+  /* 마무리: 까만 배경에 파란 모자이크가 아래부터 차오르고, 글자가 아래에서 올라와요 */
+  (function(){
+    var end = document.getElementById('contact');
+    var box = end.querySelector('.mosaic');
+    var rises = end.querySelectorAll('.rise');
+    var tiles = [], last = -1;
+    function build(){
+      var w = end.offsetWidth, h = end.offsetHeight;
+      var W = w < 600 ? 36 : 56, step = W / 2;
+      var cols = Math.ceil(w / W), rows = Math.ceil(h / step) + 2;
+      box.innerHTML = ''; tiles = [];
+      for (var r = 0; r < rows; r++){
+        for (var c = 0; c < cols; c++){
+          var t = document.createElement('i');
+          t.style.width = W + 'px'; t.style.height = W + 'px';
+          t.style.left = (c * W) + 'px'; t.style.top = (r * step - step) + 'px';
+          var fromBottom = (rows - 1 - r) / Math.max(rows - 1, 1);
+          t._at = fromBottom * 0.8 + Math.random() * 0.14;
+          box.appendChild(t); tiles.push(t);
+        }
+      }
+      last = -1; update();
+    }
+    function progress(){
+      var vh = window.innerHeight;
+      var top = end.getBoundingClientRect().top;
+      return Math.max(0, Math.min(1, (vh - top) / (vh * 0.85)));
+    }
+    function update(){
+      var pr = reduce ? 1 : progress();
+      var key = Math.round(pr * 200);
+      if (key === last) return; last = key;
+      for (var i = 0; i < tiles.length; i++){
+        var on = pr >= tiles[i]._at;
+        if (on !== tiles[i]._on){ tiles[i]._on = on; tiles[i].classList.toggle('on', on); }
+      }
+      end.classList.toggle('full', pr >= 0.97);
+      Array.prototype.forEach.call(rises, function(el){
+        var at = 0.62 + (+el.style.getPropertyValue('--r') || 0) * 0.08;
+        el.classList.toggle('up', pr >= at);
+      });
+    }
+    var tick = false;
+    window.addEventListener('scroll', function(){ if (tick) return; tick = true; requestAnimationFrame(function(){ tick = false; update(); }); }, {passive:true});
+    var rt;
+    window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 150); });
+    build();
+  })();
+})();
+</script>
+</body>
+</html>
